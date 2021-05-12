@@ -1,0 +1,29 @@
+{
+    "users": [
+        {
+            "id": "X4Hds3pW",
+            "fullName": "Ivan Ivanov",
+            "email": "vanko@fakemail.com",
+            "isAdmin": true,
+            "phone": "359-08888888",
+            "password": 1234
+        }
+    ],
+    "vehicles": [
+        {
+            "id": "x6sdD23ds0",
+            "img": "https://cdn3.focus.bg/autodata/i/volkswagen/golf/golf-iv-1j1/medium/47ec5a94b6f026aa1159439c5f9f7620.jpg",
+            "type": "economy",
+            "brand": "volkswagen",
+            "model": "golf",
+            "year": 2001,
+            "fuelType": "diesel",
+            "seats": 4,
+            "pricePerDay": "50$",
+            "availableCount": 3
+        }
+    ],
+    "rentalEvents":[
+
+    ]
+}
