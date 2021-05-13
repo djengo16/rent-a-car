@@ -1,11 +1,12 @@
 import { Route } from 'react-router';
 import './App.css';
 import Layout from './components/layout/Layout'
+import Switch from 'react-router'
 
 function App() {
   return (
     <div className="App">
-     <Route exact path="/" component={Layout} />
+     <Layout/>
     </div>
   );
 }

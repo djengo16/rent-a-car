@@ -1,0 +1,13 @@
+.login-form-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-form {
+    padding: 2%;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+  
