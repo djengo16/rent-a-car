@@ -1,3 +1,22 @@
 .auth-li-items{
     padding-left: 80%;
 }
+
+.logout-btn{
+    margin-left: 5px;
+    cursor: pointer;
+    color: black;
+    border: 1px solid darkgreen;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.logout-btn:hover{
+    margin-left: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    border: 1px solid darkgreen;
+    border-radius: 10px;
+    padding: 5px;
+}

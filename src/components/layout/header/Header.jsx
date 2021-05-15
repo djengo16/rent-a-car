@@ -1,40 +1,62 @@
 import { Link } from "react-router-dom";
-import styles from  "./header.module.css"
-import {
-  Navbar,
-  NavDropdown,
-  FormControl,
-  Nav,
-  Form,
-  Button,
-} from "react-bootstrap";
+import styles from "./header.module.css";
+import { Navbar, Nav } from "react-bootstrap";
+import { getLoggedUser, logout } from "../../../core/services/authService";
+import { useEffect } from "react";
 
 export function Header() {
+  const isUserLogged = getLoggedUser() !== null;
+
+  const onLogout = () => {
+    logout();
+  };
+
+  useEffect(()=> {
+    fetch('http://localhost:3001/')
+}, [isUserLogged]);
+
   return (
+    isUserLogged ? (
     <header>
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">Rent a Car</Navbar.Brand>
+        <Navbar.Brand href="/home"> Rent a Car</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/test">Test</Nav.Link>
-            {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-      </NavDropdown> */}
+            <Link className="nav-link" to="/">
+              Home
+            </Link>
           </Nav>
-          <Nav.Link  href="/login">Login</Nav.Link>
-          <Nav.Link  href="/register">Register</Nav.Link>
-          {/* <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-success">Search</Button>
-    </Form> */}
+            <Nav className="ms-auto">
+              <Link className="nav-link" to="/" onClick={onLogout}>
+                Logout
+              </Link>
+            </Nav>
         </Navbar.Collapse>
       </Navbar>
-    </header>
+      </header>
+      ) : (
+        <header>
+        <Navbar bg="light" expand="lg">
+        <Navbar.Brand href="/home"> Rent a Car</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Link className="nav-link" to="/">
+              Home
+            </Link>
+          </Nav>
+            <Nav className="ms-auto">
+              <Link className="nav-link" to="/login">
+                Login
+              </Link>
+              <Link className="nav-link" to="/register">
+                Register
+              </Link>
+            </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+      </header>
+      )
   );
 }
