@@ -2,6 +2,8 @@ import { Component } from "react";
 import styles from "./register.module.css";
 import { Link, Redirect } from "react-router-dom";
 import { register } from "../../../core/services/authService";
+import Sider from "../../sider/Sider";
+import { Spinner, Form} from 'react-bootstrap'
 
 export class Register extends Component {
   constructor(props) {
@@ -14,8 +16,9 @@ export class Register extends Component {
       phone: "",
       password: "",
       confirmPassword: "",
-      redirect: "false",
+      redirect: false,
       error: "",
+      isLoading: false,
     };
   }
 
@@ -30,16 +33,17 @@ export class Register extends Component {
   onFormSubmit = (e) => {
     e.preventDefault();
 
-    const { redirect, error, confirmPassword, ...user } = this.state;
-
+    this.setState({isLoading: true});
+    const { redirect, error, confirmPassword, isLoading, ...user } = this.state;
     if (user.password !== confirmPassword) {
-      throw new Error("Passwords do not match!");
+      this.setState({ error: "Passwords do not match!" });
     }
 
     register(user)
       .then((_) => {
         this.setState({
           redirect: true,
+          isLoading: false,
         });
       })
       .catch((err) => ({ error: err.message }));
@@ -48,9 +52,10 @@ export class Register extends Component {
   render() {
     return (
       <>
+        <Sider />
         {this.state.redirect === true && <Redirect to="/login" />}
         <div className={styles["register-form-wrapper"]}>
-          <form
+          <Form
             className={styles["register-form"]}
             onSubmit={this.onFormSubmit}
           >
@@ -64,7 +69,7 @@ export class Register extends Component {
                 type="text"
                 id="fullName"
                 name="fullName"
-                className="form-control"
+                className="form-control border-dark"
                 onChange={this.onInputChange}
                 required
               />
@@ -75,7 +80,7 @@ export class Register extends Component {
                 type="email"
                 id="email"
                 name="email"
-                className="form-control"
+                className="form-control border-dark"
                 onChange={this.onInputChange}
                 required
               />
@@ -86,7 +91,7 @@ export class Register extends Component {
                 type="text"
                 id="phone"
                 name="phone"
-                className="form-control"
+                className="form-control border-dark"
                 onChange={this.onInputChange}
                 required
               />
@@ -97,7 +102,7 @@ export class Register extends Component {
                 type="password"
                 id="password"
                 name="password"
-                className="form-control"
+                className="form-control border-dark"
                 onChange={this.onInputChange}
                 required
               />
@@ -108,16 +113,27 @@ export class Register extends Component {
                 type="confirmPassword"
                 id="confirmPassword"
                 name="confirmPassword"
-                className="form-control"
+                className="form-control border-dark"
                 onChange={this.onInputChange}
                 required
               />
             </div>
-            <button className="btn btn-primary">Login</button>
+            {this.state.isLoading ? (
+              <Spinner animation="border" role="status">
+              <span className="sr-only" />
+            </Spinner>
+            ) : (
+              <button className="btn btn-dark">Sign Up</button>
+            )}
             <div>
-              <Link to="/register">Already have an account?</Link>
+              <small>
+                Already have an account?{" "}
+                <Link className={styles["login-redirect"]} to="/login">
+                  Sign In!
+                </Link>
+              </small>
             </div>
-          </form>
+          </Form>
         </div>
       </>
     );

@@ -4,13 +4,14 @@
     justify-content: center;
     align-items: center;
   }
+
   
   .register-form {
     margin-bottom: 100px;
     padding: 2%;
     border: 1px solid black;
     border-radius: 10px;
-    width: 400px;
+    width: 500px;
   }
 
   .register-form input{
@@ -18,3 +19,33 @@
     margin: 10px 0;
     border: 1px solid blue;
   }
+  form {
+    margin: 0 auto;
+}
+
+.auth-heading {
+    text-align: center;
+    font-family: serif;
+    padding-bottom: 20px;
+}
+
+.btnAuth {
+    margin-top: 3%;
+}
+
+.bottom-msg-paragraph {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.bottom-msg-paragraph a:hover {
+    text-decoration: underline;
+}
+
+.form-text {
+    margin-left: 4px;
+}
+.login-redirect{
+  text-decoration: none;
+  color: silver;
+}

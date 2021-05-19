@@ -1,5 +1,5 @@
 .login-form-wrapper {
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,3 +19,7 @@
     border: 1px solid blue;
   }
   
+ .register-redirect{
+   text-decoration: none;
+   color: silver;
+ }

@@ -1,0 +1,21 @@
+.card{
+    width:300px;
+    max-height: fit-content;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.16);
+    margin: 20px;
+    
+}
+
+.card:hover{
+    transform: scale(1.02);
+    box-shadow: 0 5px 8px 0px rgba(0, 0, 0, 0.16);
+    cursor: pointer;
+}
+
+    .card-img{
+        border-bottom: 1px solid silver;
+        object-fit:fill;
+        height: 200px;
+    }
+    

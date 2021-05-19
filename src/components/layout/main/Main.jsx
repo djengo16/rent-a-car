@@ -1,11 +1,19 @@
-import { Component } from "react"
-import { Header } from "../header/Header"
-import styles from './main.module.css'
+import styles from "./main.module.css";
+import "../../sider/Search.css";
 
-export function Main(){
-    return(
-        <div className={styles["main-content"]}>
-            
-        </div>
-    )
+import VehiclesList from "../../vehicles/vehicle-list/VehiclesList";
+export function Main() {
+  return (
+    <div className={styles["main-content"]}>
+      <div id="sider">
+        <input
+          className="col-lg-6"
+          type="text"
+          placeholder="Search..."
+          name="search"
+        />
+      </div>
+      <VehiclesList />
+    </div>
+  );
 }
