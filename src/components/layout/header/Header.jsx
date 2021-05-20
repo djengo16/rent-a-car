@@ -26,8 +26,10 @@ export class Header extends Component{
       this.state.user() !== null ? (
       <header>
         <Navbar className={styles["navigation"]} bg="light" expand="lg">
-          <Navbar.Brand href="/home">
+          <Navbar.Brand>
+            <Link to="/home">
             <Image src="https://i.ibb.co/LgnR14V/car.png" />
+            </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -39,12 +41,17 @@ export class Header extends Component{
               <Nav className="ms-auto">
                 {this.state.user().isAdmin === true && 
               <NavDropdown title="Admin" drop="left" id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Create customer</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">Create ad</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-              </NavDropdown>
-              }
+                 <NavDropdown.Item>
+                     <Link className="nav-link" to="/cusotmer/create">
+                       Create customer
+                     </Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
+                     <Link className="nav-link" to="/car/create">
+                       Create ad
+                     </Link>
+                  </NavDropdown.Item>
+              </NavDropdown> }
                 <Link className="nav-link" to="/" onClick={this.onLogout}>
                   Logout
                 </Link>
@@ -55,8 +62,10 @@ export class Header extends Component{
         ) : (
           <header>
           <Navbar className={styles["navigation"]} bg="light" expand="lg">
-          <Navbar.Brand href="/home">
+          <Navbar.Brand>
+            <Link to="/home">
             <Image src="https://i.ibb.co/LgnR14V/car.png" />
+            </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

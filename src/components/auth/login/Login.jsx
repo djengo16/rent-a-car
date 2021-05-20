@@ -29,7 +29,10 @@ export function Login() {
         setRedirect(true);
         window.location.reload();
       })
-      .catch((err) => setError(err.message));
+      .catch((err) => {
+        setError(err.message)
+        setLoading(false);
+      });
   };
 
   return (

@@ -5,3 +5,15 @@ const url = "http://localhost:3000/";
 export function getVehicles(){
     return axios.get(url + 'vehicles');
 }
+
+export function getVehicleBrands(){
+    return axios.get(url + 'vehicleBrands');
+}
+/**
+ * 
+ * @param {*} adInfo => car details, brand, model,construction year etc.
+ * @returns 
+ */
+export function createVehicleAd(adInfo){
+    return axios.post(url + 'vehicles', adInfo);
+}

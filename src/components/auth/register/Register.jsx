@@ -46,7 +46,12 @@ export class Register extends Component {
           isLoading: false,
         });
       })
-      .catch((err) => ({ error: err.message }));
+      .catch((err) => {
+        this.setState({
+          error: err.message,
+          isLoading: false,
+        })
+      });
   };
 
   render() {

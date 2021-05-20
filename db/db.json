@@ -36,7 +36,7 @@
   "vehicles": [
     {
       "id": "x6sdD23ds0",
-      "img": "https://cdn3.focus.bg/autodata/i/volkswagen/golf/golf-iv-1j1/medium/47ec5a94b6f026aa1159439c5f9f7620.jpg",
+      "image": "https://cdn3.focus.bg/autodata/i/volkswagen/golf/golf-iv-1j1/medium/47ec5a94b6f026aa1159439c5f9f7620.jpg",
       "type": "economy",
       "brand": "Volkswagen",
       "model": "golf 4",
@@ -45,35 +45,84 @@
       "seats": 4,
       "pricePerDay": "50$",
       "availableCount": 3
-    },{
+    },
+    {
       "id": "t6sdp23ds0",
-      "img": "https://cdn.motor1.com/images/mgl/z2eBW/s1/2021-mercedes-benz-s-class-renderings.jpg",
+      "image": "https://cdn.motor1.com/images/mgl/z2eBW/s1/2021-mercedes-benz-s-class-renderings.jpg",
       "type": "luxury",
       "brand": "Mercedes",
       "model": "s class",
-      "year": 2021,
+      "constructionYear": 2021,
       "fuelType": "diesel",
       "seats": 4,
       "pricePerDay": "200$",
       "availableCount": 5
-    },{
+    },
+    {
       "id": "x6sr423xs0",
-      "img": "https://www.driving.co.uk/s3/st-driving-prod/uploads/2016/01/sti_Civic_Tourer-168jpg-JS204830731.jpg",
+      "image": "https://www.driving.co.uk/s3/st-driving-prod/uploads/2016/01/sti_Civic_Tourer-168jpg-JS204830731.jpg",
       "type": "estate",
       "brand": "Honda",
       "model": "Civic Tourer",
-      "year": 2001,
+      "constructionYear": 2001,
       "fuelType": "petrol",
       "seats": 4,
       "pricePerDay": "100$",
       "availableCount": 3
+    },
+    {
+      "availableCount": "4",
+      "brand": "Mercedes-Benz",
+      "type": "luxury",
+      "model": "190 D",
+      "constructionYear": "2003",
+      "seats": "4",
+      "price": "23",
+      "fuelType": "petrol",
+      "image": "https://res.cloudinary.com/diz18npdj/image/upload/uqnmntxhgx5pamnaszls.png",
+      "id": "gygt4jx"
+    },
+    {
+      "brand": "Citroën",
+      "model": "C3",
+      "type": "luxury",
+      "fuelType": "diesel",
+      "constructionYear": "2003",
+      "seats": "4",
+      "availableCount": "2",
+      "price": "23",
+      "image": "https://res.cloudinary.com/diz18npdj/image/upload/t4c3w9v6blfn6xpimmd1.png",
+      "id": "s1N8rPb"
+    },
+    {
+      "brand": "Citroën",
+      "model": "C-Zero",
+      "type": "SUV",
+      "constructionYear": "2003",
+      "seats": "3",
+      "fuelType": "petrol",
+      "availableCount": "2",
+      "price": "30",
+      "image": "https://res.cloudinary.com/diz18npdj/image/upload/ask5mll5tsxtduh2fvzk.png",
+      "id": "A1Hs_1v"
+    },
+    {
+      "brand": "Chevrolet",
+      "model": "Equinox",
+      "type": "SUV",
+      "fuelType": "diesel",
+      "constructionYear": "2003",
+      "seats": "3",
+      "availableCount": "2",
+      "price": "30$",
+      "image": "https://res.cloudinary.com/diz18npdj/image/upload/ktiifgky2amx7uunvqsw.png",
+      "id": "DX7tWO0"
     }
   ],
   "rentalEvents": [],
-  "vehicleInfo": [
+  "vehicleBrands": [
     {
-      "brand": "Seat",
-      "models": [
+      "Seat": [
         "Alhambra",
         "Altea",
         "Altea XL",
@@ -89,11 +138,8 @@
         "Inca",
         "Mii",
         "Toledo"
-      ]
-    },
-    {
-      "brand": "Renault",
-      "models": [
+      ],
+      "Renault": [
         "Captur",
         "Clio",
         "Clio Grandtour",
@@ -124,11 +170,8 @@
         "Twingo",
         "Wind",
         "Zoé"
-      ]
-    },
-    {
-      "brand": "Peugeot",
-      "models": [
+      ],
+      "Peugeot": [
         "1007",
         "107",
         "106",
@@ -165,11 +208,8 @@
         "807",
         "Bipper",
         "RCZ"
-      ]
-    },
-    {
-      "brand": "Dacia",
-      "models": [
+      ],
+      "Dacia": [
         "Dokker",
         "Duster",
         "Lodgy",
@@ -178,11 +218,8 @@
         "Logan Van",
         "Sandero",
         "Solenza"
-      ]
-    },
-    {
-      "brand": "Citroën",
-      "models": [
+      ],
+      "Citroën": [
         "Berlingo",
         "C-Crosser",
         "C-Elissée",
@@ -212,11 +249,8 @@
         "Nemo",
         "Xantia",
         "Xsara"
-      ]
-    },
-    {
-      "brand": "Opel",
-      "models": [
+      ],
+      "Opel": [
         "Agila",
         "Ampera",
         "Antara",
@@ -242,11 +276,8 @@
         "Vivaro",
         "Vivaro Kombi",
         "Zafira"
-      ]
-    },
-    {
-      "brand": "Alfa Romeo",
-      "models": [
+      ],
+      "Alfa Romeo": [
         "145",
         "146",
         "147",
@@ -266,11 +297,8 @@
         "GT",
         "Giulietta",
         "Giulia"
-      ]
-    },
-    {
-      "brand": "Škoda",
-      "models": [
+      ],
+      "Škoda": [
         "Favorit",
         "Felicia",
         "Citigo",
@@ -286,11 +314,8 @@
         "Rapid Spaceback",
         "Superb",
         "Superb Combi"
-      ]
-    },
-    {
-      "brand": "Chevrolet",
-      "models": [
+      ],
+      "Chevrolet": [
         "Alero",
         "Aveo",
         "Camaro",
@@ -316,11 +341,8 @@
         "Tacuma",
         "Tahoe",
         "Trax"
-      ]
-    },
-    {
-      "brand": "Porsche",
-      "models": [
+      ],
+      "Porsche": [
         "911 Carrera",
         "911 Carrera Cabrio",
         "911 Targa",
@@ -333,11 +355,8 @@
         "Cayman",
         "Macan",
         "Panamera"
-      ]
-    },
-    {
-      "brand": "Honda",
-      "models": [
+      ],
+      "Honda": [
         "Accord",
         "Accord Coupé",
         "Accord Tourer",
@@ -357,11 +376,8 @@
         "Jazz",
         "Legend",
         "Prelude"
-      ]
-    },
-    {
-      "brand": "Subaru",
-      "models": [
+      ],
+      "Subaru": [
         "BRZ",
         "Forester",
         "Impreza",
@@ -376,11 +392,8 @@
         "Tribeca",
         "Tribeca B9",
         "XV"
-      ]
-    },
-    {
-      "brand": "Mazda",
-      "models": [
+      ],
+      "Mazda": [
         "121",
         "2",
         "3",
@@ -409,11 +422,8 @@
         "RX-7",
         "RX-8",
         "Xedox 6"
-      ]
-    },
-    {
-      "brand": "Mitsubishi",
-      "models": [
+      ],
+      "Mitsubishi": [
         "3000 GT",
         "ASX",
         "Carisma",
@@ -439,11 +449,8 @@
         "Pajero Sport",
         "Pajero Wagon",
         "Space Star"
-      ]
-    },
-    {
-      "brand": "Lexus",
-      "models": [
+      ],
+      "Lexus": [
         "CT",
         "GS",
         "GS 300",
@@ -461,11 +468,8 @@
         "RX 400h",
         "RX 450h",
         "SC 430"
-      ]
-    },
-    {
-      "brand": "Toyota",
-      "models": [
+      ],
+      "Toyota": [
         "4-Runner",
         "Auris",
         "Avensis",
@@ -499,11 +503,8 @@
         "Verso",
         "Yaris",
         "Yaris Verso"
-      ]
-    },
-    {
-      "brand": "BMW",
-      "models": [
+      ],
+      "BMW": [
         "i3",
         "i8",
         "M3",
@@ -545,11 +546,8 @@
         "Z3 Roadster",
         "Z4",
         "Z4 Roadster"
-      ]
-    },
-    {
-      "brand": "Volkswagen",
-      "models": [
+      ],
+      "Volkswagen": [
         "Amarok",
         "Beetle",
         "Bora",
@@ -598,11 +596,8 @@
         "Tiguan",
         "Touareg",
         "Touran"
-      ]
-    },
-    {
-      "brand": "Suzuki",
-      "models": [
+      ],
+      "Suzuki": [
         "Alto",
         "Baleno",
         "Baleno kombi",
@@ -619,11 +614,8 @@
         "SX4 Sedan",
         "Vitara",
         "Wagon R+"
-      ]
-    },
-    {
-      "brand": "Mercedes-Benz",
-      "models": [
+      ],
+      "Mercedes-Benz": [
         "100 D",
         "115",
         "124",
@@ -682,11 +674,8 @@
         "SLK",
         "SLR",
         "Sprinter"
-      ]
-    },
-    {
-      "brand": "Saab",
-      "models": [
+      ],
+      "Saab": [
         "9-3",
         "9-3 Cabriolet",
         "9-3 Coupé",
@@ -697,11 +686,8 @@
         "900 C",
         "900 C Turbo",
         "9000"
-      ]
-    },
-    {
-      "brand": "Audi",
-      "models": [
+      ],
+      "Audi": [
         "100",
         "100 Avant",
         "80",
@@ -747,11 +733,8 @@
         "TT Coupé",
         "TT Roadster",
         "TTS"
-      ]
-    },
-    {
-      "brand": "Kia",
-      "models": [
+      ],
+      "Kia": [
         "Avella",
         "Besta",
         "Carens",
@@ -776,11 +759,8 @@
         "Soul",
         "Sportage",
         "Venga"
-      ]
-    },
-    {
-      "brand": "Land Rover",
-      "models": [
+      ],
+      "Land Rover": [
         "109",
         "Defender",
         "Discovery",
@@ -789,11 +769,8 @@
         "Range Rover",
         "Range Rover Evoque",
         "Range Rover Sport"
-      ]
-    },
-    {
-      "brand": "Dodge",
-      "models": [
+      ],
+      "Dodge": [
         "Avenger",
         "Caliber",
         "Challenger",
@@ -805,11 +782,8 @@
         "RAM",
         "Stealth",
         "Viper"
-      ]
-    },
-    {
-      "brand": "Chrysler",
-      "models": [
+      ],
+      "Chrysler": [
         "300 C",
         "300 C Touring",
         "300 M",
@@ -826,11 +800,8 @@
         "Stratus Cabrio",
         "Town & Country",
         "Voyager"
-      ]
-    },
-    {
-      "brand": "Ford",
-      "models": [
+      ],
+      "Ford": [
         "Aerostar",
         "B-Max",
         "C-Max",
@@ -877,18 +848,12 @@
         "Transit Van",
         "Transit Van 350",
         "Windstar"
-      ]
-    },
-    {
-      "brand": "Hummer",
-      "models": [
+      ],
+      "Hummer": [
         "H2",
         "H3"
-      ]
-    },
-    {
-      "brand": "Hyundai",
-      "models": [
+      ],
+      "Hyundai": [
         "Accent",
         "Atos",
         "Atos Prime",
@@ -920,11 +885,8 @@
         "Trajet",
         "Tucson",
         "Veloster"
-      ]
-    },
-    {
-      "brand": "Infiniti",
-      "models": [
+      ],
+      "Infiniti": [
         "EX",
         "FX",
         "G",
@@ -932,11 +894,8 @@
         "M",
         "Q",
         "QX"
-      ]
-    },
-    {
-      "brand": "Jaguar",
-      "models": [
+      ],
+      "Jaguar": [
         "Daimler",
         "F-Pace",
         "F-Type",
@@ -956,11 +915,8 @@
         "XK8 Convertible",
         "XKR",
         "XKR Convertible"
-      ]
-    },
-    {
-      "brand": "Jeep",
-      "models": [
+      ],
+      "Jeep": [
         "Cherokee",
         "Commander",
         "Compass",
@@ -968,11 +924,8 @@
         "Patriot",
         "Renegade",
         "Wrangler"
-      ]
-    },
-    {
-      "brand": "Nissan",
-      "models": [
+      ],
+      "Nissan": [
         "100 NX",
         "200 SX",
         "350 Z",
@@ -1015,11 +968,8 @@
         "Trade",
         "Vanette Cargo",
         "X-Trail"
-      ]
-    },
-    {
-      "brand": "Volvo",
-      "models": [
+      ],
+      "Volvo": [
         "240",
         "340",
         "360",
@@ -1043,11 +993,8 @@
         "XC60",
         "XC70",
         "XC90"
-      ]
-    },
-    {
-      "brand": "Daewoo",
-      "models": [
+      ],
+      "Daewoo": [
         "Espero",
         "Kalos",
         "Lacetti",
@@ -1061,11 +1008,8 @@
         "Racer",
         "Tacuma",
         "Tico"
-      ]
-    },
-    {
-      "brand": "Fiat",
-      "models": [
+      ],
+      "Fiat": [
         "1100",
         "126",
         "500",
@@ -1114,11 +1058,8 @@
         "Ulysse",
         "Uno",
         "X1/9"
-      ]
-    },
-    {
-      "brand": "MINI",
-      "models": [
+      ],
+      "MINI": [
         "Cooper",
         "Cooper Cabrio",
         "Cooper Clubman",
@@ -1130,11 +1071,8 @@
         "Countryman",
         "Mini One",
         "One D"
-      ]
-    },
-    {
-      "brand": "Rover",
-      "models": [
+      ],
+      "Rover": [
         "200",
         "214",
         "218",
@@ -1144,11 +1082,8 @@
         "416",
         "620",
         "75"
-      ]
-    },
-    {
-      "brand": "Smart",
-      "models": [
+      ],
+      "Smart": [
         "Cabrio",
         "City-Coupé",
         "Compact Pulse",
