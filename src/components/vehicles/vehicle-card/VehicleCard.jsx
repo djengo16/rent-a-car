@@ -3,14 +3,17 @@ import { Card } from "react-bootstrap";
 import { GiCarSeat } from "react-icons/gi";
 import { RiPriceTag2Fill } from "react-icons/ri";
 import { FaCarSide } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function VehicleCard(props) {
-  const { image, brand, model, availableCount, seats, price, type } =
+  const { id, image, brand, model, availableCount, seats, price, type } =
     props.vehicle;
 
   return (
     <Card className={styles["card"]}>
+      <Link to={`/ad/details/${id}`}>
       <Card.Img className={styles["card-img"]} variant="top" src={image} />
+      </Link>
       <Card.Body>
         <Card.Title classname={styles["card-title"]}>
           {brand} {model}

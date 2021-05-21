@@ -1,0 +1,24 @@
+.brand{
+    text-align: left;
+    text-decoration: double;
+    width: auto;
+}
+
+#edit-icon{
+    font-size: 19pt;
+    margin-bottom: 8px;
+    margin-left: 6px;
+}
+#delete-icon{
+    font-size: 19pt;
+    margin-bottom: 8px;
+    margin-left: 6px;
+}
+
+#car-info{
+border: 2px solid black;
+border-radius: 10px;
+padding: 1rem;
+text-decoration: none;
+list-style-type: none;
+}

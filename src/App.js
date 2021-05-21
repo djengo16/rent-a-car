@@ -10,6 +10,7 @@ import { AuthenticatedRoute } from './core/protection/AuthenticatedRoute'
 import { NonAuthenticatedRoute } from './core/protection/NonAuthenticatedRoute'
 import { CreateVehicle } from "./components/vehicles/vehicle-create/CreateVehicle";
 import Error404 from "./components/error/Error404";
+import { VehicleDetails } from "./components/vehicles/vehicle-details/VehicleDetails";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         <NonAuthenticatedRoute exact path="/register" component={Register} />
         <NonAuthenticatedRoute exact path="/login" component={Login} />
         <AuthenticatedRoute exact path="/ad/create"  component={CreateVehicle} admin={true}/>
-        <AuthenticatedRoute exact path="/ad/create"  component={CreateVehicle} />
+        <AuthenticatedRoute exact path="/ad/details/:id"  component={VehicleDetails} />
         <Route component={Error404} />
       </Switch>
       <Footer />

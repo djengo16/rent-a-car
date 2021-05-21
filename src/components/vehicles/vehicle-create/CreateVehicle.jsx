@@ -20,6 +20,8 @@ export function CreateVehicle() {
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(false);
 
+  const vehicleTypes = ["economy","luxyry","SUV","cargo","estate"];
+
   const getBrands = () => {
     getVehicleBrands()
       .then((res) => {
@@ -115,11 +117,7 @@ export function CreateVehicle() {
               <Form.Label className={styles["form-label"]}>Vehicle type</Form.Label>
               <Form.Control required as="select"placeholder="Choose..."onChange={onInputChange}>
                 <option disabled>Select type..</option>
-                <option value="economy">economy</option>
-                <option value="estate">estate</option>
-                <option value="luxury">luxury</option>
-                <option value="SUV">SUV</option>
-                <option value="Cargo">Cargo</option>
+                {vehicleTypes.map((type) => <option>{type}</option>)}
               </Form.Control>
             </Form.Group>
           </Form.Row>
