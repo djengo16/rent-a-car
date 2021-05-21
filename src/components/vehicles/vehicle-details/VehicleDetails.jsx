@@ -7,6 +7,7 @@ import { VehicleInfo } from "./VehicleInfo";
 import { Link } from "react-router-dom";
 import styles from './details.module.css'
 import { getLoggedUser, logout } from "../../../core/services/authService";
+import { VehicleRent } from "../vehicle-rent/VehicleRent";
 
 export function VehicleDetails({ computedMatch }) {
   let productId = computedMatch.params.id;
@@ -38,11 +39,18 @@ export function VehicleDetails({ computedMatch }) {
             <span className="sr-only"></span>
           </Spinner>
         ) : (
+          <>
           <Row>
-            <Col lg={12}>
-              <VehicleInfo params={vehicle} user={loggedUser} />
+          <Col lg={12}>
+            <VehicleInfo params={vehicle} user={loggedUser} />
+          </Col>
+        </Row>
+        <Row>
+            <Col lg={8}>
+            <VehicleRent />
             </Col>
-          </Row>
+        </Row>
+          </>
         )}
       </div>
     </>

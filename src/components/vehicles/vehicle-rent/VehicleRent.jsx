@@ -10,7 +10,7 @@ export function VehicleRent() {
           </Accordion.Toggle>
         </Card.Header>
         <Accordion.Collapse eventKey="0">
-          <Card.Body>Renting details form!</Card.Body>
+          <Card.Body>Renting details form goes here!</Card.Body>
         </Accordion.Collapse>
       </Card>
     </Accordion>

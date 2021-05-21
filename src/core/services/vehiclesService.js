@@ -29,3 +29,7 @@ export function createVehicleAd(adInfo) {
 export function getVehicleAd(id) {
   return axios.get(`${url}vehicles/${id}`);
 }
+
+export function deleteVehicleAd(id){
+  return axios.delete(`${url}vehicles/${id}`)
+}
