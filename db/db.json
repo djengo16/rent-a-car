@@ -117,6 +117,18 @@
       "price": "30$",
       "image": "https://res.cloudinary.com/diz18npdj/image/upload/ktiifgky2amx7uunvqsw.png",
       "id": "DX7tWO0"
+    },
+    {
+      "brand": "Peugeot",
+      "model": "2008",
+      "type": "estate",
+      "fuelType": "petrol",
+      "constructionYear": "2003",
+      "seats": "4",
+      "availableCount": "4",
+      "price": "30",
+      "image": "https://res.cloudinary.com/diz18npdj/image/upload/dsiptsf4xjkgke53ks4c.png",
+      "id": "K361ZVe"
     }
   ],
   "rentalEvents": [],

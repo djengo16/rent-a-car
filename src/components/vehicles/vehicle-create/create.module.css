@@ -24,3 +24,11 @@ border: 1px solid silver;
 padding: 2px;
 border-radius: 5px;
 }
+
+.error{
+    font-size: large;
+    color: red;
+    border: 1px solid red;
+    padding: 5px;
+    border-radius: 6px;
+}

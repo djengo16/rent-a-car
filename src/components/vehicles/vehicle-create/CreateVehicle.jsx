@@ -2,10 +2,13 @@ import Sider from "../../sider/Sider";
 import { Form, Col, Button } from "react-bootstrap";
 import styles from "./create.module.css";
 import { useEffect, useState } from "react";
-import { createVehicleAd, getVehicleBrands } from "../../../core/services/vehiclesService";
+import {
+  createVehicleAd,
+  getVehicleBrands,
+} from "../../../core/services/vehiclesService";
 import { uploadImage } from "../../../core/services/imagesService";
-import {Redirect} from 'react-router-dom'
-import {Spinner} from 'react-bootstrap'
+import { Redirect } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 export function CreateVehicle() {
   const [vehicleBrands, setVehicleBrands] = useState(null);
@@ -49,9 +52,9 @@ export function CreateVehicle() {
   const onFileChange = (event) => {
     setData((prevState) => ({
       ...prevState,
-      image: event.target.files[0]
+      image: event.target.files[0],
     }));
-  }
+  };
 
   useEffect(() => {
     if (!vehicleBrands) {
@@ -62,54 +65,60 @@ export function CreateVehicle() {
     }
   }, [selectedBrand]);
 
-  const onFormSubmit = (event) => {
-    setLoading(true);
+  const onFormSubmit = async (event) => {
     event.preventDefault();
-    const {image, ...otherData} = vehicleData;
-    console.log(image[0]);
-    uploadImage(image).then(res => {
-      createVehicleAd({
-        ...otherData,
-        image: `https://res.cloudinary.com/diz18npdj/image/upload/${res.data.public_id}.png`
-      })
-      setLoading(false);
-      setRedirect(true);
-    }).catch(err => {
-      setError(err);
-    })
-  };
+    setLoading(true);
 
+    try{
+    const { image, ...otherData } = vehicleData;
+    const res = await uploadImage(image);
+    
+    const vehicleRes = await createVehicleAd({
+      ...otherData,
+      image: `https://res.cloudinary.com/diz18npdj/image/upload/${res.data.public_id}.png`,
+    })
+    
+    setLoading(false);
+    setRedirect(true);
+
+    }catch(err){
+      setError(err);
+      setLoading(false);
+    }   
+        
+  };
   return (
     <>
       <Sider />
       {redirect && <Redirect to="/" />}
       <div className={styles["form-wrapper"]}>
-        <Form cllasName="form-inline">
+        <Form cllasName="form-inline" onSubmit={onFormSubmit}>
           <h1 className={styles.heading}>Create new ad</h1>
+        {error && <span className={styles.error}>{error}</span>}
           <Form.Row>
             <Form.Group className={styles["form-group"]} as={Col} md="3"controlId="brand"name="brand">
               <Form.Label className={styles["form-label"]}>Brand</Form.Label>
-              <Form.Control  as="select" placeholder="Choose..."  onChange={onInputChange}>
+              <Form.Control required as="select" placeholder="Choose..."  onChange={onInputChange}>
                 <option disabled>Select brand...</option>
                 {brands && brands.map((brand) => <option>{brand}</option>)}
               </Form.Control>
             </Form.Group>
             <Form.Group className={styles["form-group"]} as={Col} md="3" controlId="model" name="model">
               <Form.Label className={styles["form-label"]}>Model</Form.Label>
-              <Form.Control as="select" placeholder="Choose..." onChange={onInputChange}>
+              <Form.Control required as="select" placeholder="Choose..." onChange={onInputChange}>
                 <option disabled>Select model...</option>
                 {models && models.map((model) => <option>{model}</option>)}
               </Form.Control>
             </Form.Group>
             <Form.Group className={styles["form-group"]}as={Col} md="3" controlId="type" name="type">
               <Form.Label className={styles["form-label"]}>Vehicle type</Form.Label>
-              <Form.Control as="select"placeholder="Choose..."onChange={onInputChange}>
+              <Form.Control required as="select"placeholder="Choose..."onChange={onInputChange}>
                 <option disabled>Select type..</option>
-                <option>economy</option>
-                <option>estate</option>
-                <option>luxury</option>
-                <option>SUV</option>
-                <option>Cargo</option>
+                <option value="economy">economy</option>
+                <option value="estate">estate</option>
+                <option value="luxury">luxury</option>
+                <option value="SUV">SUV</option>
+                <option value="Cargo">Cargo</option>
               </Form.Control>
             </Form.Group>
           </Form.Row>
@@ -118,31 +127,31 @@ export function CreateVehicle() {
               <Form.Label className={styles["form-label"]}>
                 Fuel Type
               </Form.Label>
-              <Form.Control placeholder="Enter fuel type.."  onChange={onInputChange}>
+              <Form.Control required placeholder="Enter fuel type.."  onChange={onInputChange}>
               </Form.Control>
             </Form.Group>
             <Form.Group className={styles["form-group"]} as={Col}md="3"controlId="constructionYear" name="constructionYear">
               <Form.Label className={styles["form-label"]}>
                 Construction
               </Form.Label>
-              <Form.Control placeholder="Enter year of construction.." onChange={onInputChange}>
+              <Form.Control required placeholder="Enter year of construction.." onChange={onInputChange}>
               </Form.Control>
             </Form.Group>
             <Form.Group className={styles["form-group"]}as={Col}md="3" controlId="seats" name="seats">
               <Form.Label className={styles["form-label"]}>Seats</Form.Label>
-              <Form.Control  placeholder="Enter number of seats.." type="number" onChange={onInputChange}>
+              <Form.Control required  placeholder="Enter number of seats.." type="number" onChange={onInputChange}>
               </Form.Control>
             </Form.Group>
           </Form.Row>
           <Form.Row>
             <Form.Group className={styles["form-group"]} as={Col} md="2" controlId="availableCount" name="availableCount">
               <Form.Label className={styles["form-label"]}>Count</Form.Label>
-              <Form.Control placeholder="Enter available cars count." onChange={onInputChange}>
+              <Form.Control required placeholder="Enter available cars count." onChange={onInputChange}>
               </Form.Control>
             </Form.Group>
             <Form.Group className={styles["form-group"]} as={Col}md="2" controlId="price" name="price">
               <Form.Label className={styles["form-label"]}>Price</Form.Label>
-              <Form.Control  placeholder="Enter the price per day.." onChange={onInputChange}>
+              <Form.Control type="number" required  placeholder="Enter the price per day.." onChange={onInputChange}>
               </Form.Control>
             </Form.Group>
             <Form.Group className={styles["form-group"]} as={Col}md="5" controlId="image"name="image">
@@ -159,7 +168,7 @@ export function CreateVehicle() {
               <span className="sr-only" />
             </Spinner>
           ) : (
-            <Button className="btn btn-dark col-lg-2" onClick={onFormSubmit}>Create</Button>
+            <Button className="btn btn-dark col-lg-2" type="submit">Create</Button>
           )}
         </Form>
       </div>

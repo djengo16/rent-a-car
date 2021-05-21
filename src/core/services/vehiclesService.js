@@ -15,5 +15,10 @@ export function getVehicleBrands(){
  * @returns 
  */
 export function createVehicleAd(adInfo){
+
+    if(Object.keys(adInfo).length !== 9){
+        throw new Error('All fields are required!')
+    }
+
     return axios.post(url + 'vehicles', adInfo);
 }
