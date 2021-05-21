@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import { Switch } from "react-router";
+import { Route, Switch } from "react-router";
 import { Header } from "./components/layout/header/Header";
 import { Main } from "./components/layout/main/Main";
 import { Register } from "./components/auth/register/Register";
@@ -9,6 +9,7 @@ import { Footer } from "./components/layout/footer/Footer";
 import { AuthenticatedRoute } from './core/protection/AuthenticatedRoute'
 import { NonAuthenticatedRoute } from './core/protection/NonAuthenticatedRoute'
 import { CreateVehicle } from "./components/vehicles/vehicle-create/CreateVehicle";
+import Error404 from "./components/error/Error404";
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
         <AuthenticatedRoute exact path="/home" component={Main} />
         <NonAuthenticatedRoute exact path="/register" component={Register} />
         <NonAuthenticatedRoute exact path="/login" component={Login} />
-        <AuthenticatedRoute exact path="/car/create"  component={CreateVehicle} admin={true}/>
+        <AuthenticatedRoute exact path="/ad/create"  component={CreateVehicle} admin={true}/>
+        <AuthenticatedRoute exact path="/ad/create"  component={CreateVehicle} />
+        <Route component={Error404} />
       </Switch>
       <Footer />
     </div>

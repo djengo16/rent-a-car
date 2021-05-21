@@ -5,7 +5,7 @@ import { RiPriceTag2Fill } from "react-icons/ri";
 import { FaCarSide } from "react-icons/fa";
 
 export default function VehicleCard(props) {
-  const { image, brand, model, availableCount, seats, pricePerDay, type } =
+  const { image, brand, model, availableCount, seats, price, type } =
     props.vehicle;
 
   return (
@@ -20,7 +20,7 @@ export default function VehicleCard(props) {
           {seats} <small>seats</small>
           <br />
           <RiPriceTag2Fill />
-          {pricePerDay} <small>per day</small>
+          {price} <small>per day</small>
           <br />
           <FaCarSide /> 
           {type}

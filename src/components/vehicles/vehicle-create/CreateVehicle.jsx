@@ -42,6 +42,7 @@ export function CreateVehicle() {
     if (event.target.id === "brand") {
       setSelectedBrand(event.target.value);
     }
+    
 
     setData((prevState) => ({
       ...prevState,

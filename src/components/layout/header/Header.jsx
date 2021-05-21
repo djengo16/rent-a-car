@@ -47,7 +47,7 @@ export class Header extends Component{
                      </Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
-                     <Link className="nav-link" to="/car/create">
+                     <Link className="nav-link" to="/ad/create">
                        Create ad
                      </Link>
                   </NavDropdown.Item>

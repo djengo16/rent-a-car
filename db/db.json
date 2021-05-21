@@ -43,7 +43,7 @@
       "year": 2001,
       "fuelType": "diesel",
       "seats": 4,
-      "pricePerDay": "50$",
+      "price": 50,
       "availableCount": 3
     },
     {
@@ -55,7 +55,7 @@
       "constructionYear": 2021,
       "fuelType": "diesel",
       "seats": 4,
-      "pricePerDay": "200$",
+      "price": 200,
       "availableCount": 5
     },
     {
@@ -67,7 +67,7 @@
       "constructionYear": 2001,
       "fuelType": "petrol",
       "seats": 4,
-      "pricePerDay": "100$",
+      "price": 100,
       "availableCount": 3
     },
     {
@@ -90,7 +90,7 @@
       "constructionYear": "2003",
       "seats": "4",
       "availableCount": "2",
-      "price": "23",
+      "price": 30,
       "image": "https://res.cloudinary.com/diz18npdj/image/upload/t4c3w9v6blfn6xpimmd1.png",
       "id": "s1N8rPb"
     },
@@ -102,7 +102,7 @@
       "seats": "3",
       "fuelType": "petrol",
       "availableCount": "2",
-      "price": "30",
+      "price": 30,
       "image": "https://res.cloudinary.com/diz18npdj/image/upload/ask5mll5tsxtduh2fvzk.png",
       "id": "A1Hs_1v"
     },
@@ -114,7 +114,7 @@
       "constructionYear": "2003",
       "seats": "3",
       "availableCount": "2",
-      "price": "30$",
+      "price": 30,
       "image": "https://res.cloudinary.com/diz18npdj/image/upload/ktiifgky2amx7uunvqsw.png",
       "id": "DX7tWO0"
     },
@@ -126,7 +126,7 @@
       "constructionYear": "2003",
       "seats": "4",
       "availableCount": "4",
-      "price": "30",
+      "price": 30,
       "image": "https://res.cloudinary.com/diz18npdj/image/upload/dsiptsf4xjkgke53ks4c.png",
       "id": "K361ZVe"
     }
