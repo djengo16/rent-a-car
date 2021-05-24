@@ -10,21 +10,21 @@ import { getLoggedUser, logout } from "../../../core/services/authService";
 import { VehicleRent } from "../vehicle-rent/VehicleRent";
 
 export function VehicleDetails({ computedMatch }) {
-  let productId = computedMatch.params.id;
-  const [vehicle, setVehicle] = useState([]);
-  const [isLoading, setLoading] = useState(false);
-  const [loggedUser, setLoggedUser] = useState({});
+    const [vehicle, setVehicle] = useState([]);
+    const [isLoading, setLoading] = useState(false);
+    const [loggedUser, setLoggedUser] = useState({});
+    let vehicleAdId = computedMatch.params.id;
 
   useEffect(() => {
       setLoggedUser(getLoggedUser())
     setLoading(true);
     console.log("asd");
-    getVehicleAd(productId).then((res) => {
+    getVehicleAd(vehicleAdId).then((res) => {
       console.log(res);
       setVehicle(res.data);
       setLoading(false);
     });
-  }, [productId]);
+  }, [vehicleAdId]);
 
   return (
     <>

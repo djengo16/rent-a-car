@@ -50,7 +50,7 @@
       "id": "t6sdp23ds0",
       "image": "https://cdn.motor1.com/images/mgl/z2eBW/s1/2021-mercedes-benz-s-class-renderings.jpg",
       "type": "luxury",
-      "brand": "Mercedes",
+      "brand": "Mercedes-Benz",
       "model": "s class",
       "constructionYear": 2021,
       "fuelType": "diesel",
@@ -72,30 +72,30 @@
     },
     {
       "availableCount": "4",
-      "brand": "Mercedes-Benz",
+      "brand": "Peugeot",
       "type": "luxury",
-      "model": "190 D",
-      "constructionYear": "2003",
+      "model": "108",
+      "constructionYear": "2020",
       "seats": "4",
-      "price": "23",
+      "price": "100",
       "fuelType": "petrol",
-      "image": "https://res.cloudinary.com/diz18npdj/image/upload/uqnmntxhgx5pamnaszls.png",
-      "id": "gygt4jx"
+      "id": "gygt4jx",
+      "image": "https://res.cloudinary.com/diz18npdj/image/upload/eshltzswfqywhecztaau.png"
     },
     {
-      "brand": "Citroën",
-      "model": "C3",
+      "brand": "Seat",
+      "model": "Altea XL",
       "type": "luxury",
       "fuelType": "diesel",
       "constructionYear": "2003",
       "seats": "4",
       "availableCount": "2",
       "price": 30,
-      "image": "https://res.cloudinary.com/diz18npdj/image/upload/t4c3w9v6blfn6xpimmd1.png",
-      "id": "s1N8rPb"
+      "id": "s1N8rPb",
+      "image": "https://res.cloudinary.com/diz18npdj/image/upload/qzrpltyzuf5cpd0xut9z.png"
     },
     {
-      "brand": "Citroën",
+      "brand": "Peugeot",
       "model": "C-Zero",
       "type": "SUV",
       "constructionYear": "2003",
@@ -103,8 +103,20 @@
       "fuelType": "petrol",
       "availableCount": "2",
       "price": 30,
-      "image": "https://res.cloudinary.com/diz18npdj/image/upload/ask5mll5tsxtduh2fvzk.png",
-      "id": "A1Hs_1v"
+      "id": "A1Hs_1v",
+      "image": "https://res.cloudinary.com/diz18npdj/image/upload/ekl2gn5pcgsskbciu1mz.png"
+    },
+    {
+      "brand": "BMW",
+      "model": "M3",
+      "type": "luxyry",
+      "fuelType": "petrol",
+      "constructionYear": "2020",
+      "seats": "4",
+      "price": "500",
+      "availableCount": "2",
+      "image": "https://res.cloudinary.com/diz18npdj/image/upload/gw10q0qjafuozzhik1df.png",
+      "id": "aKLH3jR"
     }
   ],
   "rentalEvents": [],

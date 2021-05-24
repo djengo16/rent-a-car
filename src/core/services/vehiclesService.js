@@ -21,6 +21,11 @@ export function createVehicleAd(adInfo) {
 
   return axios.post(url + "vehicles", adInfo);
 }
+
+export function updateVehicleAd(updatedVehicleAd) {
+
+  return axios.put(`${url}vehicles/${updatedVehicleAd.id}`, updatedVehicleAd);
+}
 /**
  * 
  * @param {*} id 

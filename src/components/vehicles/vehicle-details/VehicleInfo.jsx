@@ -35,7 +35,7 @@ export function VehicleInfo({ params, user }) {
               overlay={<Tooltip>Edit the ad</Tooltip>}
             >
               <span id={styles["edit-icon"]}>
-                <Link to={``}>
+                <Link to={`/ad/edit/${params.id}`}>
                   <GrEdit />
                 </Link>
               </span>
