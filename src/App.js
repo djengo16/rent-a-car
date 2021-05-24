@@ -6,8 +6,8 @@ import { Main } from "./components/layout/main/Main";
 import { Register } from "./components/auth/register/Register";
 import { Login } from "./components/auth/login/Login";
 import { Footer } from "./components/layout/footer/Footer";
-import { AuthenticatedRoute } from './core/protection/AuthenticatedRoute'
-import { NonAuthenticatedRoute } from './core/protection/NonAuthenticatedRoute'
+import { AuthenticatedRoute } from './core/guards/AuthenticatedRoute'
+import { NonAuthenticatedRoute } from './core/guards/NonAuthenticatedRoute'
 import { CreateVehicle } from "./components/vehicles/vehicle-create/CreateVehicle";
 import Error404 from "./components/error/Error404";
 import { VehicleDetails } from "./components/vehicles/vehicle-details/VehicleDetails";
