@@ -30,7 +30,6 @@ export function Login() {
         context.logIn(user)
         setLoading(false);
         setRedirect(true);
-        window.location.reload();
       })
       .catch((err) => {
         setError(err.message)
