@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { useState } from "react";
 import { Route, Switch } from "react-router";
 import { Header } from "./components/layout/header/Header";
 import { Main } from "./components/layout/main/Main";
@@ -12,10 +12,36 @@ import { CreateVehicle } from "./components/vehicles/vehicle-create/CreateVehicl
 import Error404 from "./components/error/Error404";
 import { VehicleDetails } from "./components/vehicles/vehicle-details/VehicleDetails";
 import { EditVehicle } from "./components/vehicles/vehicle-edit/EditVehicle";
+import UserContext from "./Context";
+import { getLoggedUser, logout } from "./core/services/authService";
 
 function App() {
+
+  const [user, setUser] = useState(getLoggedUser() ? {
+    ...getLoggedUser(),
+    loggedIn: true
+  } : null)
+  
+  const logIn = (userObject) => {
+    setUser({
+      ...userObject,
+      loggedIn: true
+    })
+  }
+
+  const logOut = () => {    
+    logout();
+    setUser({
+      loggedIn: false
+    })
+  }
   return (
     <div className="App">
+      <UserContext.Provider value={{
+      user,
+      logIn,
+      logOut,
+    }}>
       <Header />
       <Switch>
         <AuthenticatedRoute exact path="/" component={Main} />
@@ -28,6 +54,7 @@ function App() {
         <Route component={Error404} />
       </Switch>
       <Footer />
+      </UserContext.Provider>
     </div>
   );
 }

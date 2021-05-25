@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./login.module.css";
 import { Redirect, Link } from "react-router-dom";
 import { login } from "../../../core/services/authService";
 import Sider from "../../sider/Sider";
 import {Spinner} from 'react-bootstrap';
+import UserContext from "../../../Context";
 
 export function Login() {
   const [userData, setUserData] = useState(null);
   const [redirect, setRedirect] = useState(false);
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(false);
+  const context = useContext(UserContext);
 
   const onInputChange = (event) => {
     event.persist();
@@ -24,7 +26,8 @@ export function Login() {
     event.preventDefault();
     setLoading(true);
     login(userData)
-      .then((_) => {
+      .then((user) => {
+        context.logIn(user)
         setLoading(false);
         setRedirect(true);
         window.location.reload();

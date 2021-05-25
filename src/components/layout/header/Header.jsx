@@ -1,29 +1,20 @@
 import { Link } from "react-router-dom";
 import styles from "./header.module.css";
 import { Navbar, Nav, Image, NavDropdown } from "react-bootstrap";
-import { getLoggedUser, logout } from "../../../core/services/authService";
-import {Component} from 'react'
+import {useContext} from 'react'
+import UserContext from "../../../Context";
 
-export class Header extends Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      user: () => getLoggedUser()
-    }
-  }
+export const Header = () => {
 
-  onLogout = () => {
-    logout();
-    this.forceUpdate()
+  const context = useContext(UserContext);
+
+
+  const onLogout = () => {
+    context.logOut();
   };
 
-  componentDidMount(){
-    console.log(this.state.user());
-  }
-
-  render(){
     return (
-      this.state.user() !== null ? (
+      context.user.loggedIn ? (
       <header>
         <Navbar className={styles["navigation"]} bg="light" expand="lg">
           <Navbar.Brand>
@@ -39,7 +30,7 @@ export class Header extends Component{
               </Link>
             </Nav>
               <Nav className="ms-auto">
-                {this.state.user().isAdmin === true && 
+                {context.user.isAdmin === true && 
               <NavDropdown title="Admin" drop="left" id="collasible-nav-dropdown">
                  <NavDropdown.Item>
                      <Link className="nav-link" to="/cusotmer/create">
@@ -52,7 +43,7 @@ export class Header extends Component{
                      </Link>
                   </NavDropdown.Item>
               </NavDropdown> }
-                <Link className="nav-link" to="/" onClick={this.onLogout}>
+                <Link className="nav-link" to="/" onClick={onLogout}>
                   Logout
                 </Link>
               </Nav>
@@ -88,4 +79,3 @@ export class Header extends Component{
         )
     );
   }
-}
