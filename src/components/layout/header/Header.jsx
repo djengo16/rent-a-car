@@ -33,8 +33,8 @@ export const Header = () => {
                 {context.user.isAdmin === true && 
               <NavDropdown title="Admin" drop="left" id="collasible-nav-dropdown">
                  <NavDropdown.Item>
-                     <Link className="nav-link" to="/cusotmer/create">
-                       Create customer
+                     <Link className="nav-link" to="/users">
+                       View customers
                      </Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item>

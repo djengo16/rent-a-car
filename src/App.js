@@ -14,6 +14,7 @@ import { VehicleDetails } from "./components/vehicles/vehicle-details/VehicleDet
 import { EditVehicle } from "./components/vehicles/vehicle-edit/EditVehicle";
 import UserContext from "./Context";
 import { getLoggedUser, logout } from "./core/services/authService";
+import { UsersList } from "./components/users/users-list/UsersList";
 
 function App() {
 
@@ -51,6 +52,7 @@ function App() {
         <AuthenticatedRoute exact path="/ad/create"  component={CreateVehicle} admin={true} />
         <AuthenticatedRoute exact path="/ad/details/:id"  component={VehicleDetails} />
         <AuthenticatedRoute exact path="/ad/edit/:id"  component={EditVehicle} admin={true} />
+        <AuthenticatedRoute exact path="/users"  component={UsersList} admin={true} />
         <Route component={Error404} />
       </Switch>
       <Footer />
