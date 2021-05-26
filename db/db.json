@@ -7,7 +7,8 @@
       "isAdmin": true,
       "phone": "359-08888888",
       "password": 1234,
-      "totalRents": 0
+      "totalRents": 0,
+      "avatar": "https://pickaface.net/gallery/avatar/jacke.cereza553d6aa44468b.png"
     },
     {
       "fullName": "Djengiz",
@@ -16,7 +17,8 @@
       "phone": "0888888888",
       "password": "12345",
       "id": "F6NJL1Y",
-      "totalRents": 0
+      "totalRents": 0,
+      "avatar": "https://avatars.githubusercontent.com/u/28236809?v=4"
     },
     {
       "fullName": "Petyo",
@@ -25,7 +27,8 @@
       "phone": "1231231342",
       "password": "1234",
       "id": "tBOzV-H",
-      "totalRents": 0
+      "totalRents": 0,
+      "avatar": "https://avatarfiles.alphacoders.com/105/thumb-105114.jpg"
     },
     {
       "fullName": "pesho",
@@ -34,7 +37,8 @@
       "phone": "123",
       "password": "123",
       "id": "IFVcf_b",
-      "totalRents": 0
+      "totalRents": 0,
+      "avatar": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200"
     }
   ],
   "vehicles": [

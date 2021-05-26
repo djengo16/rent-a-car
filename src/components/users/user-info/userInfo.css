@@ -1,0 +1,14 @@
+.container{
+    background: rgb(228,228,228);
+    background: linear-gradient(360deg, rgba(228,228,228,1) 0%, rgba(227,227,227,0) 100%, rgba(255,255,255,1) 200%);
+    align-items: center;
+    padding: 30px;
+    padding-left: 300px;
+}
+
+#avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    object-fit: cover;
+}

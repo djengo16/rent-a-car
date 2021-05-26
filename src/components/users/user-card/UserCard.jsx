@@ -1,24 +1,25 @@
 import { Link } from "react-router-dom";
+import { UserProfile } from "../user-profile/UserProfile";
 
-export function UserCard(props) {
+export function UserCard({user}) {
   return (
       <div className="card" style={{margin: "20px"}}>
         <div class="row no-gutters">
           <div class="col-sm-5" 
-              style={{maxWidth: "40%"}}>
+              style={{width: "200px",height: "200px"}}>
             <img
               class="card-img"
-              src="https://icon-library.com/images/default-user-icon/default-user-icon-4.jpg"
+              src={user.avatar}
               alt="Suresh Dasari Card"
             />
           </div>
-          <div class="col-sm-7" style={{maxWidth: "60%"}}>
+          <div class="col-sm-7" style={{width: "auto"}}>
             <div class="card-body">
-              <h5 class="card-title">{props.user.fullName}</h5>
+              <h5 class="card-title">{user.fullName}</h5>
               <p class="card-text">
-                Total rents: {props.user.totalRents}
+                Total rents: {user.totalRents}
               </p>
-              <Link to={`/users/${props.user.id}`} class="btn btn-dark">
+              <Link to={`/users/${user.id}`} params={user}  class="btn btn-dark">
                 View Profile
               </Link>
             </div>
