@@ -1,12 +1,11 @@
 .login-form-wrapper {
-    height: 80vh;
+    height: 48vh;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
   .login-form {
-    margin-bottom: 200px;
     padding: 2%;
     border: 1px solid black;
     border-radius: 10px;

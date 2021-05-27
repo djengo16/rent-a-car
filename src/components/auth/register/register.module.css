@@ -1,5 +1,5 @@
 .register-form-wrapper {
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,6 @@
 
   
   .register-form {
-    margin-bottom: 100px;
     padding: 2%;
     border: 1px solid black;
     border-radius: 10px;

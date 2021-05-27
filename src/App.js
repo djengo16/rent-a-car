@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router";
 import { Header } from "./components/layout/header/Header";
 import { Main } from "./components/layout/main/Main";
@@ -17,7 +17,7 @@ import { getLoggedUser, logout } from "./core/services/authService";
 import { UsersList } from "./components/users/users-list/UsersList";
 import { UserProfile } from "./components/users/user-profile/UserProfile";
 
-function App() {
+function App(props) {
 
   const [user, setUser] = useState(getLoggedUser() ? {
     ...getLoggedUser(),
@@ -54,7 +54,8 @@ function App() {
         <AuthenticatedRoute exact path="/ad/details/:id"  component={VehicleDetails} />
         <AuthenticatedRoute exact path="/ad/edit/:id"  component={EditVehicle} admin={true} />
         <AuthenticatedRoute exact path="/users"  component={UsersList} admin={true} />
-        <AuthenticatedRoute exact path="/users/:id"  component={UserProfile}  />
+        <AuthenticatedRoute exact path="/user/:id"  component={UserProfile}  />
+        <AuthenticatedRoute exact path="/user/:id/rents/:filer"  component={UserProfile}  />
         <Route component={Error404} />
       </Switch>
       <Footer />

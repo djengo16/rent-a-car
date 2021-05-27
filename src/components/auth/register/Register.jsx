@@ -19,6 +19,7 @@ export class Register extends Component {
       redirect: false,
       error: "",
       isLoading: false,
+      avatar: "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png"
     };
   }
 
@@ -115,7 +116,7 @@ export class Register extends Component {
             <div className="form-grup">
               <label htmlFor="confirmPassword">Confirm Password</label>
               <input
-                type="confirmPassword"
+                type="password"
                 id="confirmPassword"
                 name="confirmPassword"
                 className="form-control border-dark"

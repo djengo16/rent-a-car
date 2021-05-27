@@ -1,9 +1,8 @@
-.container{
+#profile-head{
     background: rgb(228,228,228);
     background: linear-gradient(360deg, rgba(228,228,228,1) 0%, rgba(227,227,227,0) 100%, rgba(255,255,255,1) 200%);
     align-items: center;
     padding: 30px;
-    padding-left: 300px;
 }
 
 #avatar {
@@ -11,4 +10,17 @@
     height: 150px;
     border-radius: 100px;
     object-fit: cover;
+    border: 1px solid black;
+}
+
+.crud-icon{
+    padding: 10px;
+    background-color: white;
+    margin:10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.crud-icon :hover{
+    cursor: pointer;
 }

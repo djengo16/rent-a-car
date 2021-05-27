@@ -18,9 +18,7 @@ export function VehicleDetails({ computedMatch }) {
   useEffect(() => {
       setLoggedUser(getLoggedUser())
     setLoading(true);
-    console.log("asd");
     getVehicleAd(vehicleAdId).then((res) => {
-      console.log(res);
       setVehicle(res.data);
       setLoading(false);
     });

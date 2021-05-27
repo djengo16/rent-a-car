@@ -8,7 +8,6 @@ export function UsersList() {
 
   useEffect(() => {
     getAllUsers().then((res) => {
-        console.log(res)
       setUsers(res.data);
     });
   }, []);

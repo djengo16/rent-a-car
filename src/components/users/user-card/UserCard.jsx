@@ -19,7 +19,7 @@ export function UserCard({user}) {
               <p class="card-text">
                 Total rents: {user.totalRents}
               </p>
-              <Link to={`/users/${user.id}`} params={user}  class="btn btn-dark">
+              <Link to={`/user/${user.id}`} params={user}  class="btn btn-dark">
                 View Profile
               </Link>
             </div>

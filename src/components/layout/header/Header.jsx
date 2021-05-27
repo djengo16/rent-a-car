@@ -30,6 +30,11 @@ export const Header = () => {
               </Link>
             </Nav>
               <Nav className="ms-auto">
+              <Nav className="mr-auto">
+              <Link className="nav-link" to={`/user/${context.user.id}`}>
+                Profile
+              </Link>
+            </Nav>
                 {context.user.isAdmin === true && 
               <NavDropdown title="Admin" drop="left" id="collasible-nav-dropdown">
                  <NavDropdown.Item>

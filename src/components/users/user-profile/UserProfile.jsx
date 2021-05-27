@@ -5,7 +5,7 @@ export function UserProfile({computedMatch}){
     return(
         <>
         <UserInfo userId={computedMatch.params.id} />
-        <UserRents />
+        <UserRents userId={computedMatch.params.id} />
         </>
     )
 }
