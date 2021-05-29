@@ -2,7 +2,7 @@ import styles from "./main.module.css";
 import "../../sider/Search.css";
 
 import VehiclesList from "../../vehicles/vehicle-list/VehiclesList";
-export function Main() {
+export function Home() {
   return (
     <div className={styles["main-content"]}>
       <div id="sider">

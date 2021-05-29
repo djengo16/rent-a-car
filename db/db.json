@@ -129,26 +129,6 @@
   ],
   "rentalEvents": [
     {
-      "startDate": "2021-04-06T00:18",
-      "endDate": "2021-04-15T00:18",
-      "address": "",
-      "vehicle": {
-        "id": "t6sdp23ds0",
-        "image": "https://cdn.motor1.com/images/mgl/z2eBW/s1/2021-mercedes-benz-s-class-renderings.jpg",
-        "type": "luxury",
-        "brand": "Mercedes-Benz",
-        "model": "s class",
-        "constructionYear": 2021,
-        "fuelType": "diesel",
-        "seats": 4,
-        "price": 200,
-        "availableCount": 5
-      },
-      "customerId": "F6NJL1Y",
-      "status": "waiting",
-      "id": 1
-    },
-    {
       "startDate": "Tue Apr 06 2021",
       "endDate": "Sat Apr 24 2021",
       "address": "Knqz Boriz 1 Number 25",
@@ -165,13 +145,14 @@
         "availableCount": 3
       },
       "customerId": "F6NJL1Y",
-      "status": "waiting",
+      "customerName": "Djengiz Ibryamov",
+      "status": "Waiting",
       "id": 2
     },
     {
       "startDate": "Tue Apr 06 2021",
       "endDate": "Tue Apr 06 2021",
-      "address": "",
+      "address": "Sredna Gora 4",
       "vehicle": {
         "id": "x6sr423xs0",
         "image": "https://www.driving.co.uk/s3/st-driving-prod/uploads/2016/01/sti_Civic_Tourer-168jpg-JS204830731.jpg",
@@ -184,8 +165,9 @@
         "price": 100,
         "availableCount": 2
       },
+      "customerName": "Djengiz Ibryamov",
       "customerId": "F6NJL1Y",
-      "status": "waiting",
+      "status": "Waiting",
       "id": 3
     },
     {
@@ -205,7 +187,8 @@
         "availableCount": 1
       },
       "customerId": "F6NJL1Y",
-      "status": "waiting",
+      "customerName": "Djengiz Ibryamov",
+      "status": "Old",
       "id": 4
     },
     {
@@ -225,7 +208,8 @@
         "image": "https://res.cloudinary.com/diz18npdj/image/upload/eshltzswfqywhecztaau.png"
       },
       "customerId": "F6NJL1Y",
-      "status": "waiting",
+      "customerName": "Djengiz Ibryamov",
+      "status": "In Proccess",
       "id": 5
     }
   ],

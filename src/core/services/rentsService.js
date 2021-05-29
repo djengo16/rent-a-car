@@ -4,10 +4,17 @@ import { calculateDays } from "./dateService";
 const url = 'http://localhost:3000/';
 
 export const RentalStatus = {
-  Waiting: "waiting",
+  Waiting: "Waiting",
   InProccess: "In Proccess",
   Old: "Old",
 };
+
+export const QueryRentalStatus = {
+  waiting: "Waiting",
+  'in-proccess': "In Proccess",
+  old: "Old",
+};
+
 
 /**
  * This function calculates the total price with or within discount
@@ -49,4 +56,8 @@ export function createRental(rental) {
 
 export function getCustomerRentals(customerId){
   return axios.get(`${url}rentalEvents/?customerId=${customerId}`)
+}
+
+export function getAllRentals(){
+  return axios.get(`${url}rentalEvents`)
 }

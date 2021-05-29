@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 import { Route, Switch } from "react-router";
 import { Header } from "./components/layout/header/Header";
-import { Main } from "./components/layout/main/Main";
+import { Home } from "./components/layout/main/Home";
 import { Register } from "./components/auth/register/Register";
 import { Login } from "./components/auth/login/Login";
 import { Footer } from "./components/layout/footer/Footer";
@@ -16,6 +16,7 @@ import UserContext from "./Context";
 import { getLoggedUser, logout } from "./core/services/authService";
 import { UsersList } from "./components/users/users-list/UsersList";
 import { UserProfile } from "./components/users/user-profile/UserProfile";
+import { AllRents } from "./components/rentals/rents-list/AllRents";
 
 function App(props) {
 
@@ -46,8 +47,8 @@ function App(props) {
     }}>
       <Header />
       <Switch>
-        <AuthenticatedRoute exact path="/" component={Main} />
-        <AuthenticatedRoute exact path="/home" component={Main} />
+        <AuthenticatedRoute exact path="/" component={Home} />
+        <AuthenticatedRoute exact path="/home" component={Home} />
         <NonAuthenticatedRoute exact path="/register" component={Register} />
         <NonAuthenticatedRoute exact path="/login" component={Login} />
         <AuthenticatedRoute exact path="/ad/create"  component={CreateVehicle} admin={true} />
@@ -55,7 +56,8 @@ function App(props) {
         <AuthenticatedRoute exact path="/ad/edit/:id"  component={EditVehicle} admin={true} />
         <AuthenticatedRoute exact path="/users"  component={UsersList} admin={true} />
         <AuthenticatedRoute exact path="/user/:id"  component={UserProfile}  />
-        <AuthenticatedRoute exact path="/user/:id/rents/:filer"  component={UserProfile}  />
+        <AuthenticatedRoute exact path="/user/:id/rents/:filter"  component={UserProfile}  />
+        <AuthenticatedRoute exact path="/rentals"  component={AllRents}  />
         <Route component={Error404} />
       </Switch>
       <Footer />

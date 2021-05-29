@@ -47,6 +47,11 @@ export const Header = () => {
                        Create ad
                      </Link>
                   </NavDropdown.Item>
+                  <NavDropdown.Item>
+                     <Link className="nav-link" to="/rentals">
+                       Rentals
+                     </Link>
+                  </NavDropdown.Item>
               </NavDropdown> }
                 <Link className="nav-link" to="/" onClick={onLogout}>
                   Logout
