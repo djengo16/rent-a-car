@@ -63,11 +63,6 @@ export function CreateVehicle() {
     }));
   };
 
-  // var loadFile = function(event) {
-  //   var image = document.getElementById('output');
-  //   image.src = URL.createObjectURL(event.target.files[0]);
-  // };
-
   useEffect(() => {
     if (!brandsWithModels) {
       getBrands();

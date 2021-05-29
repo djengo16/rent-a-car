@@ -1,5 +1,5 @@
 import { MdPhoneAndroid, MdEmail } from "react-icons/md";
-import { FaSellsy } from "react-icons/fa";
+import { RiVipCrownFill } from "react-icons/ri";
 import { Row, Col, Image, Modal, Button, Form, Spinner } from "react-bootstrap";
 import { BsFillPersonFill } from "react-icons/bs";
 import { useContext, useEffect } from "react";
@@ -115,9 +115,9 @@ export function UserInfo({ userId }) {
             <p>
               <MdPhoneAndroid /> +{user.phone}
             </p>
-            <p>
-              <FaSellsy /> {user.totalRents} rents in total
-            </p>
+            {user.isVip && (<p>
+              <RiVipCrownFill /> VIP
+            </p>)}
           </Col>
           <div>
             <span className="crud-icon">

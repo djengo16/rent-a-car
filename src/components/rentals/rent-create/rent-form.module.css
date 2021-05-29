@@ -1,0 +1,15 @@
+form {
+  text-align: left;
+}
+
+#discount-label{
+  color:rgb(219, 0, 44)
+}
+#original-price{
+  text-decoration: line-through;
+}
+
+.datetime-picker {
+  margin-bottom: 20px;
+  display: inline;
+}

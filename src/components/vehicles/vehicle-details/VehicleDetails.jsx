@@ -5,18 +5,18 @@ import Sider from "../../sider/Sider";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import { VehicleInfo } from "./VehicleInfo";
 import { Link } from "react-router-dom";
-import styles from './details.module.css'
+import styles from "./details.module.css";
 import { getLoggedUser, logout } from "../../../core/services/authService";
 import { VehicleRent } from "../vehicle-rent/VehicleRent";
 
 export function VehicleDetails({ computedMatch }) {
-    const [vehicle, setVehicle] = useState([]);
-    const [isLoading, setLoading] = useState(false);
-    const [loggedUser, setLoggedUser] = useState({});
-    let vehicleAdId = computedMatch.params.id;
+  const [vehicle, setVehicle] = useState([]);
+  const [isLoading, setLoading] = useState(false);
+  const [loggedUser, setLoggedUser] = useState({});
+  let vehicleAdId = computedMatch.params.id;
 
   useEffect(() => {
-      setLoggedUser(getLoggedUser())
+    setLoggedUser(getLoggedUser());
     setLoading(true);
     getVehicleAd(vehicleAdId).then((res) => {
       setVehicle(res.data);
@@ -29,7 +29,9 @@ export function VehicleDetails({ computedMatch }) {
       <Sider />
       <div className="container">
         <Breadcrumb className={styles.breadcrumb}>
-            <Link to='/' className={styles.link}>Home</Link>
+          <Link to="/" className={styles.link}>
+            Home
+          </Link>
         </Breadcrumb>
         {/* <VehicleRent /> */}
         {isLoading ? (
@@ -38,16 +40,16 @@ export function VehicleDetails({ computedMatch }) {
           </Spinner>
         ) : (
           <>
-          <Row>
-          <Col lg={12}>
-            <VehicleInfo params={vehicle} user={loggedUser} />
-          </Col>
-        </Row>
-        <Row>
-            <Col lg={8}>
-            <VehicleRent />
-            </Col>
-        </Row>
+            <Row>
+              <Col lg={12}>
+                <VehicleInfo params={vehicle} user={loggedUser} />
+              </Col>
+            </Row>
+            <Row>
+              <Col lg={8}>
+                <VehicleRent vehicle={vehicle} customer={loggedUser} />
+              </Col>
+            </Row>
           </>
         )}
       </div>
