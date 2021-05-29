@@ -9,7 +9,10 @@ import {
 } from "../../../core/services/rentsService";
 import { formatDate } from "../../../core/services/dateService";
 import { Button } from "react-bootstrap";
-import { shouldUpdateToVIP } from "../../../core/services/usersService";
+import {
+  shouldUpdateToVIP,
+  updateUser,
+} from "../../../core/services/usersService";
 import { updateVehicleAd } from "../../../core/services/vehiclesService";
 import { Redirect } from "react-router";
 
@@ -59,7 +62,12 @@ export function RentCreate({ customer, vehicle }) {
     try {
       const shouldUpdate = await shouldUpdateToVIP(customer);
 
-      console.log(shouldUpdate);
+      if (shouldUpdate) {
+        updateUser({
+          ...customer,
+          isVip: true,
+        });
+      }
 
       const rentalEvent = {
         startDate: new Date(valueFromEl.current.value).toDateString(),
@@ -85,77 +93,77 @@ export function RentCreate({ customer, vehicle }) {
 
   return (
     <>
-    {redirect && <Redirect to="/" />}
-    <Form style={styles} onSubmit={handleSubmit}>
-      {error && <label style={{ color: "red" }}>{error}</label>}
-      <h2>Renting details</h2>
-      <Form.Group controlId="customerName">
-        <Form.Label>Customer</Form.Label>
-        <Form.Control
-          required
-          disabled
-          value={customer.fullName}
-        ></Form.Control>
-      </Form.Group>
-      <Form.Group>
-        <Form.Label>Vehicle model</Form.Label>
-        <Form.Control
-          required
-          disabled
-          value={`${vehicle.brand} ${vehicle.model}`}
-        ></Form.Control>
-      </Form.Group>
-      <Form.Group>
-        <Form.Label>From</Form.Label>
-        <Form.Control
-          type="datetime-local"
-          min={minStartDate}
-          ref={valueFromEl}
-          defaultValue={formattedDate}
-          onChange={onDateTimeChange}
-        />
-        <Form.Text className="text-muted">
-          Choose your pick up date and time!
-        </Form.Text>
-      </Form.Group>
-      <Form.Group>
-        <Form.Label>To</Form.Label>
-        <Form.Control
-          type="datetime-local"
-          min={formattedDate}
-          ref={valueToEl}
-          defaultValue={formattedDate}
-          onChange={onDateTimeChange}
-        />
-        <Form.Text className="text-muted">
-          Choose your drop off date and time!
-        </Form.Text>
-      </Form.Group>
-      <Form.Group>
-        <Form.Label>Address</Form.Label>
-        <Form.Control
-          required
-          placeholder="Enter your pick up address .."
-          onChange={onAddressChange}
-        ></Form.Control>
-      </Form.Group>
-      <div>
-        <h2>{totalPrice !== 0 && `Total price: ${totalPrice}`}</h2>
-        {discount !== 0 && (
-          <label id={styles["discount-label"]}>
-            <label id={styles["original-price"]}>{price}$</label>
-            <small> {discount}% discount</small>
-          </label>
+      {redirect && <Redirect to="/" />}
+      <Form style={styles} onSubmit={handleSubmit}>
+        {error && <label style={{ color: "red" }}>{error}</label>}
+        <h2>Renting details</h2>
+        <Form.Group controlId="customerName">
+          <Form.Label>Customer</Form.Label>
+          <Form.Control
+            required
+            disabled
+            value={customer.fullName}
+          ></Form.Control>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Vehicle model</Form.Label>
+          <Form.Control
+            required
+            disabled
+            value={`${vehicle.brand} ${vehicle.model}`}
+          ></Form.Control>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>From</Form.Label>
+          <Form.Control
+            type="datetime-local"
+            min={minStartDate}
+            ref={valueFromEl}
+            defaultValue={formattedDate}
+            onChange={onDateTimeChange}
+          />
+          <Form.Text className="text-muted">
+            Choose your pick up date and time!
+          </Form.Text>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>To</Form.Label>
+          <Form.Control
+            type="datetime-local"
+            min={formattedDate}
+            ref={valueToEl}
+            defaultValue={formattedDate}
+            onChange={onDateTimeChange}
+          />
+          <Form.Text className="text-muted">
+            Choose your drop off date and time!
+          </Form.Text>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Address</Form.Label>
+          <Form.Control
+            required
+            placeholder="Enter your pick up address .."
+            onChange={onAddressChange}
+          ></Form.Control>
+        </Form.Group>
+        <div>
+          <h2>{totalPrice !== 0 && `Total price: ${totalPrice}`}</h2>
+          {discount !== 0 && (
+            <label id={styles["discount-label"]}>
+              <label id={styles["original-price"]}>{price}$</label>
+              <small> {discount}% discount</small>
+            </label>
+          )}
+        </div>
+        {isLoading ? (
+          <Spinner animation="border" />
+        ) : (
+          <Button variant="outline-dark" type="submit">
+            RENT
+          </Button>
         )}
-      </div>
-      {isLoading ? (
-        <Spinner animation="border" />
-      ) : (
-        <Button variant="outline-dark" type="submit">
-          RENT
-        </Button>
-      )}
-    </Form>
+      </Form>
     </>
   );
 }

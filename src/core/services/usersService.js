@@ -13,11 +13,8 @@ export function getUserById(id) {
 }
 
 export function updateUser(user) {
+  localStorage.setItem("loggedUser",JSON.stringify(user));
   return axios.put(`${url}users/${user.id}`, user);
-}
-
-export function updateUserRentals(rental, userId) {
-  return axios.put(`${url}users/${userId}`, rental);
 }
 
 export function deleteUser(userId) {
