@@ -23,7 +23,7 @@ function App(props) {
   const [user, setUser] = useState(getLoggedUser() ? {
     ...getLoggedUser(),
     loggedIn: true
-  } : null)
+  } : {})
   
   const logIn = (userObject) => {
     setUser({
@@ -57,7 +57,7 @@ function App(props) {
         <AuthenticatedRoute exact path="/users"  component={UsersList} admin={true} />
         <AuthenticatedRoute exact path="/user/:id"  component={UserProfile}  />
         <AuthenticatedRoute exact path="/user/:id/rents/:filter"  component={UserProfile}  />
-        <AuthenticatedRoute exact path="/rentals"  component={AllRents}  />
+        <AuthenticatedRoute exact path="/rentals"  component={AllRents}  admin={true} />
         <Route component={Error404} />
       </Switch>
       <Footer />

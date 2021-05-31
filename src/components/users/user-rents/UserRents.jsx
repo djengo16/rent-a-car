@@ -8,12 +8,13 @@ import { RentsList } from "../../rentals/rents-list/RentsList";
 import styles from "./userRents.module.css";
 export function UserRents({ computedMatch }) {
   const [userRents, setUserRents] = useState([]);
-  const [userRentsFiltered, setUserRentsFiltered] = useState(userRents);
+  const [userRentsFiltered, setUserRentsFiltered] = useState([]);
   const userId = computedMatch.params.id;
 
   useEffect(() => {
     getCustomerRentals(userId).then((res) => {
       setUserRents(res.data);
+      setUserRentsFiltered(res.data);
     });
   }, []);
 
