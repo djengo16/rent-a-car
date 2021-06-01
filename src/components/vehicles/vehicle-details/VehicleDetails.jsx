@@ -33,7 +33,6 @@ export function VehicleDetails({ computedMatch }) {
             Home
           </Link>
         </Breadcrumb>
-        {/* <VehicleRent /> */}
         {isLoading ? (
           <Spinner animation="border" role="status">
             <span className="sr-only"></span>

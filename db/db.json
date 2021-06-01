@@ -21,13 +21,13 @@
       "avatar": "https://avatars.githubusercontent.com/u/28236809?v=4"
     },
     {
-      "fullName": "Petko Kovachev",
+      "fullName": "Petko Katsarov",
       "email": "petko@fakemail.com",
       "isAdmin": false,
       "phone": "8585858583",
       "password": "12345",
       "id": "tBOzV-H",
-      "isVip": false,
+      "isVip": true,
       "avatar": "https://res.cloudinary.com/diz18npdj/image/upload/vehfok9avi09cathxnmn.png"
     },
     {
@@ -64,11 +64,10 @@
       "fuelType": "diesel",
       "seats": 4,
       "price": 200,
-      "availableCount": 5
+      "availableCount": 4
     },
     {
       "id": "x6sr423xs0",
-      "image": "https://www.driving.co.uk/s3/st-driving-prod/uploads/2016/01/sti_Civic_Tourer-168jpg-JS204830731.jpg",
       "type": "estate",
       "brand": "Honda",
       "model": "Civic Tourer",
@@ -76,10 +75,11 @@
       "fuelType": "petrol",
       "seats": 4,
       "price": 100,
-      "availableCount": 0
+      "availableCount": 5,
+      "image": "https://res.cloudinary.com/diz18npdj/image/upload/mdpiclphvp1bl11dtczd.png"
     },
     {
-      "availableCount": 3,
+      "availableCount": 2,
       "brand": "Peugeot",
       "type": "luxury",
       "model": "108",
@@ -97,10 +97,10 @@
       "fuelType": "diesel",
       "constructionYear": "2003",
       "seats": "4",
-      "availableCount": "2",
-      "price": 30,
+      "availableCount": 7,
+      "price": "45",
       "id": "s1N8rPb",
-      "image": "https://res.cloudinary.com/diz18npdj/image/upload/qzrpltyzuf5cpd0xut9z.png"
+      "image": "https://res.cloudinary.com/diz18npdj/image/upload/v1622539882/jfvxa6a5lzoetag0cw7k.jpg"
     },
     {
       "brand": "Peugeot",
@@ -112,7 +112,7 @@
       "availableCount": "2",
       "price": 30,
       "id": "A1Hs_1v",
-      "image": "https://res.cloudinary.com/diz18npdj/image/upload/ekl2gn5pcgsskbciu1mz.png"
+      "image": "https://res.cloudinary.com/diz18npdj/image/upload/jy5ho3k6eysucywcsqle.png"
     },
     {
       "brand": "BMW",
@@ -129,12 +129,11 @@
   ],
   "rentalEvents": [
     {
-      "startDate": "Tue Apr 06 2021",
-      "endDate": "Sat Apr 24 2021",
-      "address": "Knqz Boriz 1 Number 25",
+      "startDate": "6/2/2021, 1:24:00 PM",
+      "endDate": "6/4/2021, 1:24:00 PM",
+      "address": "knqz Boris I 24",
       "vehicle": {
         "id": "x6sr423xs0",
-        "image": "https://www.driving.co.uk/s3/st-driving-prod/uploads/2016/01/sti_Civic_Tourer-168jpg-JS204830731.jpg",
         "type": "estate",
         "brand": "Honda",
         "model": "Civic Tourer",
@@ -142,41 +141,62 @@
         "fuelType": "petrol",
         "seats": 4,
         "price": 100,
-        "availableCount": 3
+        "availableCount": "9",
+        "image": "https://res.cloudinary.com/diz18npdj/image/upload/mdpiclphvp1bl11dtczd.png"
+      },
+      "customerId": "tBOzV-H",
+      "totalPrice": 200,
+      "status": "Waiting",
+      "id": 1
+    },
+    {
+      "startDate": "6/1/2021, 1:27:00 PM",
+      "endDate": "6/2/2021, 1:27:00 PM",
+      "address": "Sredna gora 2",
+      "vehicle": {
+        "id": "x6sr423xs0",
+        "type": "estate",
+        "brand": "Honda",
+        "model": "Civic Tourer",
+        "constructionYear": 2001,
+        "fuelType": "petrol",
+        "seats": 4,
+        "price": 100,
+        "availableCount": 8,
+        "image": "https://res.cloudinary.com/diz18npdj/image/upload/mdpiclphvp1bl11dtczd.png"
       },
       "customerId": "F6NJL1Y",
-      "customerName": "Djengiz Ibryamov",
+      "totalPrice": 85,
       "status": "Waiting",
       "id": 2
     },
     {
-      "startDate": "Tue Apr 06 2021",
-      "endDate": "Tue Apr 06 2021",
-      "address": "Sredna Gora 4",
+      "startDate": "6/1/2021, 1:44:00 PM",
+      "endDate": "6/10/2021, 1:44:00 PM",
+      "address": "knqz boris I 27",
       "vehicle": {
-        "id": "x6sr423xs0",
-        "image": "https://www.driving.co.uk/s3/st-driving-prod/uploads/2016/01/sti_Civic_Tourer-168jpg-JS204830731.jpg",
-        "type": "estate",
-        "brand": "Honda",
-        "model": "Civic Tourer",
-        "constructionYear": 2001,
-        "fuelType": "petrol",
-        "seats": 4,
-        "price": 100,
-        "availableCount": 2
+        "brand": "Seat",
+        "model": "Altea XL",
+        "type": "luxury",
+        "fuelType": "diesel",
+        "constructionYear": "2003",
+        "seats": "4",
+        "availableCount": "10",
+        "price": "45",
+        "id": "s1N8rPb",
+        "image": "https://res-console.cloudinary.com/diz18npdj/thumbnails/v1/image/upload/v1622539882/amZ2eGE2YTVsem9ldGFnMGN3N2s=/preview"
       },
-      "customerName": "Djengiz Ibryamov",
-      "customerId": "F6NJL1Y",
-      "status": "In Proccess",
+      "customerId": "tBOzV-H",
+      "totalPrice": 376.65,
+      "status": "Waiting",
       "id": 3
     },
     {
-      "startDate": "Thu Aug 26 2021",
-      "endDate": "Wed Oct 27 2021",
-      "address": "Ivan Vazov N:25",
+      "startDate": "6/1/2021, 1:45:00 PM",
+      "endDate": "6/3/2021, 1:44:00 PM",
+      "address": "knqz Boris I 27",
       "vehicle": {
         "id": "x6sr423xs0",
-        "image": "https://www.driving.co.uk/s3/st-driving-prod/uploads/2016/01/sti_Civic_Tourer-168jpg-JS204830731.jpg",
         "type": "estate",
         "brand": "Honda",
         "model": "Civic Tourer",
@@ -184,32 +204,33 @@
         "fuelType": "petrol",
         "seats": 4,
         "price": 100,
-        "availableCount": 1
+        "availableCount": 7,
+        "image": "https://res.cloudinary.com/diz18npdj/image/upload/mdpiclphvp1bl11dtczd.png"
       },
-      "customerId": "F6NJL1Y",
-      "customerName": "Djengiz Ibryamov",
-      "status": "Old",
+      "customerId": "tBOzV-H",
+      "totalPrice": 200,
+      "status": "Waiting",
       "id": 4
     },
     {
-      "startDate": "Sat May 29 2021",
-      "endDate": "Sun May 30 2021",
-      "address": "Knqz Boris 1 Nomer: 27",
+      "startDate": "6/1/2021, 5:00:00 PM",
+      "endDate": "6/9/2021, 3:40:00 PM",
+      "address": "knqz boris I 23",
       "vehicle": {
-        "availableCount": "4",
-        "brand": "Peugeot",
-        "type": "luxury",
-        "model": "108",
-        "constructionYear": "2020",
-        "seats": "4",
-        "price": "100",
+        "id": "x6sr423xs0",
+        "type": "estate",
+        "brand": "Honda",
+        "model": "Civic Tourer",
+        "constructionYear": 2001,
         "fuelType": "petrol",
-        "id": "gygt4jx",
-        "image": "https://res.cloudinary.com/diz18npdj/image/upload/eshltzswfqywhecztaau.png"
+        "seats": 4,
+        "price": 100,
+        "availableCount": 6,
+        "image": "https://res.cloudinary.com/diz18npdj/image/upload/mdpiclphvp1bl11dtczd.png"
       },
-      "customerId": "F6NJL1Y",
-      "customerName": "Djengiz Ibryamov",
-      "status": "In Proccess",
+      "customerId": "tBOzV-H",
+      "totalPrice": 744,
+      "status": "Waiting",
       "id": 5
     }
   ],

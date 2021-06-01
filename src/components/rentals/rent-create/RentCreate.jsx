@@ -70,11 +70,12 @@ export function RentCreate({ customer, vehicle }) {
       }
 
       const rentalEvent = {
-        startDate: new Date(valueFromEl.current.value).toDateString(),
-        endDate: new Date(valueToEl.current.value).toDateString(),
+        startDate: new Date(valueFromEl.current.value).toLocaleString(),
+        endDate: new Date(valueToEl.current.value).toLocaleString(),
         address,
         vehicle: vehicle,
         customerId: customer.id,
+        totalPrice: totalPrice,
         status: RentalStatus.Waiting,
       };
 
@@ -148,10 +149,10 @@ export function RentCreate({ customer, vehicle }) {
           ></Form.Control>
         </Form.Group>
         <div>
-          <h2>{totalPrice !== 0 && `Total price: ${totalPrice}`}</h2>
+          <h2>{totalPrice !== 0 && `Total price: ${totalPrice.toFixed(2)}`}</h2>
           {discount !== 0 && (
             <label id={styles["discount-label"]}>
-              <label id={styles["original-price"]}>{price}$</label>
+              <label id={styles["original-price"]}>{price.toFixed(2)}$</label>
               <small> {discount}% discount</small>
             </label>
           )}

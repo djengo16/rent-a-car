@@ -50,7 +50,7 @@ export function EditVehicle({ computedMatch }) {
     try {
       const { image, ...otherData } = vehicleData;
 
-      if (image) {
+      if (image !== currentImage) {
         const res = await uploadImage(image);
 
         await updateVehicleAd({
@@ -59,7 +59,7 @@ export function EditVehicle({ computedMatch }) {
         });
       } else {
         await updateVehicleAd({
-          ...otherData,
+          ...vehicleData,
         });
       }
 
@@ -73,7 +73,7 @@ export function EditVehicle({ computedMatch }) {
   return (
     <>
       <Sider />
-      {redirect && <Redirect to="/" />}
+      {redirect && <Redirect to={`/ad/details/${vehicleAdId}`} />}
       <div className="container">
         <Form cllasName="form-inline" onSubmit={onFormSubmit}>
           <h1 className={styles.heading}>Edit vehicle ad</h1>

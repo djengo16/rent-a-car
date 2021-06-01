@@ -23,7 +23,7 @@ export function deleteUser(userId) {
 
 export async function shouldUpdateToVIP(customer) {
   const days = 60;
-  if (customer.isVip || !customer.rentals) {
+  if (customer.isVip) {
     return false;
   }
 
@@ -31,7 +31,7 @@ export async function shouldUpdateToVIP(customer) {
 
   let rentalsInLastTwoMonths = 0;
   customerRentals.forEach((x) => {
-    if (isDateInTheLast(x.startDate, days)) {
+    if (isDateInTheLast(new Date(x.startDate), days)) {
       rentalsInLastTwoMonths += 1;
     }
   });

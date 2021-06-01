@@ -33,5 +33,5 @@ export function isDateInTheLast(date, days) {
 
 export function calculateDays(start, end) {
   let totalTime = end.getTime() - start.getTime();
-  return totalTime / (1000 * 3600 * 24);
+  return Math.round(totalTime / (1000 * 3600 * 24));
 }

@@ -1,15 +1,17 @@
 import { useContext, useState } from "react";
-import { Button, ButtonGroup, Card, Dropdown } from "react-bootstrap";
+import { Button, ButtonGroup, Card, Dropdown, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import UserContext from "../../../Context";
 import {
   changeRentalEventStatus,
   RentalStatus,
 } from "../../../core/services/rentsService";
+import { increaseVehiclesCount } from "../../../core/services/vehiclesService";
 import styles from "./rent-card.module.css";
 
 export function RentCard({ info }) {
   const [status, setStatus] = useState(info.status);
+  const [isLoading, setLoading] = useState(false);
 
   const badges = {
     Waiting: "warning",
@@ -18,8 +20,15 @@ export function RentCard({ info }) {
   };
 
   const handleStatusChange = (e) => {
-    changeRentalEventStatus(info.id, e.target.innerText);
-    setStatus(e.target.innerText);
+    const newStatus = e.target.innerText;
+    if (newStatus !== status) {
+      changeRentalEventStatus(info.id, newStatus);
+      setStatus(newStatus);
+
+      if (newStatus === RentalStatus.Old) {
+        increaseVehiclesCount(info.id, info.vehicle.availableCount);
+      }
+    }
   };
 
   const context = useContext(UserContext);
@@ -27,26 +36,26 @@ export function RentCard({ info }) {
   return (
     <Card className={styles["card"]}>
       <Card.Header>
-        <Button
-          style={{ float: "left" }}
-          disabled
-          variant={badges[status]}
-        >
+        <Button style={{ float: "left" }} disabled variant={badges[status]}>
           {status}
         </Button>
         {info.address}
       </Card.Header>
       <Card.Body>
-        <Card.Title>{info.customerName}</Card.Title>
+        <Card.Title>{info.vehicle.brand} {info.vehicle.model}</Card.Title>
         <Card.Text>
-          {info.vehicle.brand} {info.vehicle.model}
+           Total price: {info.totalPrice.toFixed(2)}$
         </Card.Text>
         <Link to={`/user/${info.customerId}`}>Customer</Link>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <Link to={`/ad/details/${info.vehicle.id}`}>Vehicle</Link>
         {context.user.isAdmin && (
           <Dropdown as={ButtonGroup} className="d-block">
-            <Button variant="secondary">Change status</Button>
+            {!isLoading ? (
+              <Button variant="secondary">Change status</Button>
+            ) : (
+              <Spinner animation="border" />
+            )}
 
             <Dropdown.Toggle split variant="dark" id="dropdown-split-basic" />
 

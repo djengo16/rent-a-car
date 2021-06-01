@@ -23,18 +23,23 @@ export function createVehicleAd(adInfo) {
 }
 
 export function updateVehicleAd(updatedVehicleAd) {
-
   return axios.put(`${url}vehicles/${updatedVehicleAd.id}`, updatedVehicleAd);
 }
 /**
- * 
- * @param {*} id 
+ *
+ * @param {*} id
  * @returns vehicle details
  */
 export function getVehicleAd(id) {
   return axios.get(`${url}vehicles/${id}`);
 }
 
-export function deleteVehicleAd(id){
-  return axios.delete(`${url}vehicles/${id}`)
+export function deleteVehicleAd(id) {
+  return axios.delete(`${url}vehicles/${id}`);
+}
+
+export function increaseVehiclesCount(id, currentCount) {
+  return axios.patch(`${url}vehicles/${id}`, {
+    availableCount: currentCount + 1,
+  });
 }
