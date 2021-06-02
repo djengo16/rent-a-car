@@ -38,8 +38,13 @@ export function deleteVehicleAd(id) {
   return axios.delete(`${url}vehicles/${id}`);
 }
 
-export function increaseVehiclesCount(id, currentCount) {
-  return axios.patch(`${url}vehicles/${id}`, {
-    availableCount: currentCount + 1,
+export function increaseVehiclesCount(id) {
+  getVehicleAd(id).then((res) => {
+    let { availableCount, ...other } = res.data;
+    availableCount += 1;
+
+    return axios.put(`${url}vehicles/${id}`, { ...other, availableCount });
   });
+
+  return false;
 }

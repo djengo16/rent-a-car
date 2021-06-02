@@ -116,7 +116,7 @@ export function CreateVehicle() {
           <div className="col-lg-12">
           <Form.Group className={styles["form-group"]} controlId="availableCount" name="availableCount">
               <Form.Label className={styles["form-label"]}>Available vehicles Count</Form.Label>
-              <Form.Control required placeholder="Enter available cars count." onChange={onInputChange}>
+              <Form.Control required type="number" placeholder="Enter available cars count." onChange={onInputChange}>
               </Form.Control>
             </Form.Group>
           </div>

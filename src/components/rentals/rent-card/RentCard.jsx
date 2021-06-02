@@ -26,7 +26,7 @@ export function RentCard({ info }) {
       setStatus(newStatus);
 
       if (newStatus === RentalStatus.Old) {
-        increaseVehiclesCount(info.id, info.vehicle.availableCount);
+        increaseVehiclesCount(info.vehicle.id);
       }
     }
   };
