@@ -18,7 +18,7 @@ import { UsersList } from "./components/users/users-list/UsersList";
 import { UserProfile } from "./components/users/user-profile/UserProfile";
 import { AllRents } from "./components/rentals/rents-list/AllRents";
 
-function App(props) {
+function App() {
 
   const [user, setUser] = useState(getLoggedUser() ? {
     ...getLoggedUser(),
@@ -56,7 +56,8 @@ function App(props) {
         <AuthenticatedRoute exact path="/ad/edit/:id"  component={EditVehicle} admin={true} />
         <AuthenticatedRoute exact path="/users"  component={UsersList} admin={true} />
         <AuthenticatedRoute exact path="/user/:id"  component={UserProfile}  />
-        <AuthenticatedRoute exact path="/user/:id/rents/:filter"  component={UserProfile}  />
+        <AuthenticatedRoute exact path="/user/:id/rentals/:filter"  component={UserProfile}  />
+        <AuthenticatedRoute exact path="/rentals/:filter"  component={AllRents} admin={true} />
         <AuthenticatedRoute exact path="/rentals"  component={AllRents}  admin={true} />
         <Route component={Error404} />
       </Switch>

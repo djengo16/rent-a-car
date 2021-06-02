@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Button, ButtonGroup, Card, Dropdown, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import UserContext from "../../../Context";
@@ -19,11 +19,15 @@ export function RentCard({ info }) {
     Old: "secondary",
   };
 
+  useEffect(() => {
+    setStatus(info.status);
+  }, [info]);
+
   const handleStatusChange = (e) => {
     const newStatus = e.target.innerText;
     if (newStatus !== status) {
       changeRentalEventStatus(info.id, newStatus);
-      setStatus(newStatus);
+      setStatus(newStatus)
 
       if (newStatus === RentalStatus.Old) {
         increaseVehiclesCount(info.vehicle.id);
@@ -42,10 +46,10 @@ export function RentCard({ info }) {
         {info.address}
       </Card.Header>
       <Card.Body>
-        <Card.Title>{info.vehicle.brand} {info.vehicle.model}</Card.Title>
-        <Card.Text>
-           Total price: {info.totalPrice.toFixed(2)}$
-        </Card.Text>
+        <Card.Title>
+          {info.vehicle.brand} {info.vehicle.model}
+        </Card.Title>
+        <Card.Text>Total price: {info.totalPrice.toFixed(2)}$</Card.Text>
         <Link to={`/user/${info.customerId}`}>Customer</Link>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <Link to={`/ad/details/${info.vehicle.id}`}>Vehicle</Link>

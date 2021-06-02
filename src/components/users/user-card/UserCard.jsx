@@ -1,3 +1,4 @@
+import { RiVipCrownFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { UserProfile } from "../user-profile/UserProfile";
 
@@ -15,10 +16,10 @@ export function UserCard({user}) {
           </div>
           <div class="col-sm-7" style={{width: "auto"}}>
             <div class="card-body">
+            {user.isVip && (<p>
+              <RiVipCrownFill /> VIP
+            </p>)}
               <h5 class="card-title">{user.fullName}</h5>
-              <p class="card-text">
-                Total rents: {user.totalRents}
-              </p>
               <Link to={`/user/${user.id}`} params={user}  class="btn btn-dark">
                 View Profile
               </Link>

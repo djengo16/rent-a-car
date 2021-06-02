@@ -1,22 +1,45 @@
 import { useEffect, useState } from "react";
-import { getAllRentals } from "../../../core/services/rentsService";
+import { getAllRentals, QueryRentalStatus } from "../../../core/services/rentsService";
 import { RentsList } from "./RentsList";
-export function AllRents(props) {
+import { RentsNav } from '../rents-nav/RentsNav'
+
+export function AllRents({computedMatch}) {
   const [rentals, setRentals] = useState([]);
+  const [rentalsFiltered, setRentalsFiltered] = useState([]);
+
+  const rentsQuery = {
+    "All": '/rentals/all',
+    "Waiting": '/rentals/waiting',
+    "In Proccess": '/rentals/in-proccess',
+    "Old": '/rentals/old'
+  }
 
   useEffect(() => {
-      console.log(props);
+      
     getAllRentals().then((res) => {
       setRentals(res.data);
+      setRentalsFiltered(res.data);
     });
   }, []);
 
+  useEffect(() => {
+    if (computedMatch.params.filter === "all") {
+      setRentalsFiltered(rentals);
+    } else {
+      setRentalsFiltered(
+        rentals.filter(
+          (x) => x.status == QueryRentalStatus[computedMatch.params.filter]
+        )
+      );
+          console.log(computedMatch.params.filter)
+
+    }
+  }, [computedMatch]);
+
   return (
-    <div>
-        <div>
-            <h2>Customer Rentals</h2>
-        </div>
-        <RentsList rentals={rentals} />
+    <div className="container">
+        <RentsNav rentals={rentsQuery} />
+        <RentsList rentals={rentalsFiltered} />
     </div>
   );
 }

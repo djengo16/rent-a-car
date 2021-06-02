@@ -1,0 +1,19 @@
+#rents{
+    text-align: center;
+    padding: 3%;
+    border-bottom: 1px solid black;
+}
+
+.nav-btn{
+    padding: 5px 100px;
+    margin: 10px 20px;
+    color: #fff;
+    background-color: #212529;
+    border-color: #212529;
+    border-radius: 8px;
+}
+
+.heading{
+    margin: 20px;
+    font-family: -moz-initial;
+}
