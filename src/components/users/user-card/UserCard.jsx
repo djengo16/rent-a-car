@@ -1,6 +1,5 @@
 import { RiVipCrownFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { UserProfile } from "../user-profile/UserProfile";
 
 export function UserCard({user}) {
   return (

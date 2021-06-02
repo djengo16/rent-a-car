@@ -24,6 +24,7 @@ export function RentCard({ info }) {
   }, [info]);
 
   const handleStatusChange = (e) => {
+    setLoading(true);
     const newStatus = e.target.innerText;
     if (newStatus !== status) {
       changeRentalEventStatus(info.id, newStatus);
@@ -33,6 +34,7 @@ export function RentCard({ info }) {
         increaseVehiclesCount(info.vehicle.id);
       }
     }
+    setLoading(false);
   };
 
   const context = useContext(UserContext);

@@ -1,7 +1,6 @@
-import { Accordion, Card, Button, Form } from "react-bootstrap";
+import { Accordion, Card, Button } from "react-bootstrap";
 import styles from "./rent.module.css";
 import { RentCreate } from "../../rentals/rent-create/RentCreate";
-import { useEffect } from "react";
 export function VehicleRent(props) {
   return (
     <Accordion>

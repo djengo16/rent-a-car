@@ -19,7 +19,6 @@ export class Register extends Component {
       redirect: false,
       error: "",
       isLoading: false,
-      isAdmin: false,
       rentals: [],
       avatar: "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
     };

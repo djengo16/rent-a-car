@@ -23,7 +23,7 @@ export function UserRentals({ computedMatch }) {
       setUserRents(res.data);
       setUserRentsFiltered(res.data);
     });
-  }, []);
+  }, [userId]);
 
   useEffect(() => {
     if (computedMatch.params.filter === "all") {
@@ -35,7 +35,7 @@ export function UserRentals({ computedMatch }) {
         )
       );
     }
-  }, [computedMatch]);
+  }, [computedMatch, userRents]);
 
   return (
     <div className="container">

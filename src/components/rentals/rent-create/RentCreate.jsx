@@ -81,7 +81,7 @@ export function RentCreate({ customer, vehicle }) {
 
       await createRental(rentalEvent);
 
-      const vehicleAd = await updateVehicleAd({
+      await updateVehicleAd({
         ...vehicle,
         availableCount: vehicle.availableCount - 1,
       });

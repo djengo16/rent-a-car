@@ -28,13 +28,13 @@ export function AllRents({computedMatch}) {
     } else {
       setRentalsFiltered(
         rentals.filter(
-          (x) => x.status == QueryRentalStatus[computedMatch.params.filter]
+          (x) => x.status === QueryRentalStatus[computedMatch.params.filter]
         )
       );
           console.log(computedMatch.params.filter)
 
     }
-  }, [computedMatch]);
+  }, [computedMatch, rentals]);
 
   return (
     <div className="container">

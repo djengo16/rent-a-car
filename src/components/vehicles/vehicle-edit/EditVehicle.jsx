@@ -40,7 +40,7 @@ export function EditVehicle({ computedMatch }) {
         setData(res.data);
         setCurrentImage(res.data.image);
       });
-  }, []);
+  }, [vehicleAdId]);
 
 
   const onFormSubmit = async (event) => {
@@ -75,7 +75,7 @@ export function EditVehicle({ computedMatch }) {
       <Sider />
       {redirect && <Redirect to={`/ad/details/${vehicleAdId}`} />}
       <div className="container">
-        <Form cllasName="form-inline" onSubmit={onFormSubmit}>
+        <Form className="form-inline" onSubmit={onFormSubmit}>
           <h1 className={styles.heading}>Edit vehicle ad</h1>
         {error && <span className={styles.error}>{error}</span>}
         <Row>

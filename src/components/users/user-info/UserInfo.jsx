@@ -1,10 +1,14 @@
 import { MdPhoneAndroid, MdEmail } from "react-icons/md";
 import { RiVipCrownFill } from "react-icons/ri";
-import { Row, Col, Image, Modal, Button, Form, Spinner } from "react-bootstrap";
+import { Row, Col, Image, Modal, Button, Spinner } from "react-bootstrap";
 import { BsFillPersonFill } from "react-icons/bs";
 import { useContext, useEffect } from "react";
 import { useState } from "react";
-import { deleteUser, getUserById, updateUser } from "../../../core/services/usersService";
+import {
+  deleteUser,
+  getUserById,
+  updateUser,
+} from "../../../core/services/usersService";
 import "./userInfo.css";
 import { GrEdit } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
@@ -22,20 +26,21 @@ export function UserInfo({ userId }) {
   const context = useContext(UserContext);
   const loggedUser = getLoggedUser();
 
-  const deleteMessage = 'Are you sure you want to permanently delete your account?';
+  const deleteMessage =
+    "Are you sure you want to permanently delete your account?";
 
   useEffect(() => {
     //Protection check
-    if(loggedUser.id !== userId && loggedUser.isAdmin === false){
+    if (loggedUser.id !== userId && loggedUser.isAdmin === false) {
       setRedirect(true);
-    }else{
+    } else {
       getUserById(userId).then((res) => {
         setUser(res.data);
         setCurrentEditAvatar(res.data.avatar);
         setEditedUser(res.data);
       });
     }
-  }, [userId]);
+  }, [userId, loggedUser.id, loggedUser.isAdmin]);
 
   const onInputChange = (event) => {
     setEditedUser((prevState) => ({
@@ -62,28 +67,26 @@ export function UserInfo({ userId }) {
         ...otherData,
         avatar: `https://res.cloudinary.com/diz18npdj/image/upload/${res.data.public_id}.png`,
       }).then((res) => {
-        setUser(res.data)
+        setUser(res.data);
         setLoading(false);
         handleClose();
       });
-    }else{
-      updateUser(editedUser)
-      .then((res) => {
-        setUser(res.data)
+    } else {
+      updateUser(editedUser).then((res) => {
+        setUser(res.data);
         setLoading(false);
         handleClose();
       });
     }
   };
-  
+
   const handleDetele = (e) => {
-    deleteUser(user.id).then(_ => {
+    deleteUser(user.id).then((_) => {
       handleDeleteClose();
       setRedirect(true);
       context.logOut();
-    })
-  }
-
+    });
+  };
 
   //For EDIT MODAL
   const [show, setShow] = useState(false);
@@ -115,9 +118,11 @@ export function UserInfo({ userId }) {
             <p>
               <MdPhoneAndroid /> +{user.phone}
             </p>
-            {user.isVip && (<p>
-              <RiVipCrownFill /> VIP
-            </p>)}
+            {user.isVip && (
+              <p>
+                <RiVipCrownFill /> VIP
+              </p>
+            )}
           </Col>
           <div>
             <span className="crud-icon">
@@ -209,13 +214,15 @@ export function UserInfo({ userId }) {
             )}
           </Modal.Footer>
         </Modal>
-        <Modal className="modal-delete" show={showDelete} onHide={handleDeleteClose}>
+        <Modal
+          className="modal-delete"
+          show={showDelete}
+          onHide={handleDeleteClose}
+        >
           <Modal.Header closeButton>
             <Modal.Title>Delete your account</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
-            {deleteMessage}
-          </Modal.Body>
+          <Modal.Body>{deleteMessage}</Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleDeleteClose}>
               Discard

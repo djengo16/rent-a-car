@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { UserInfo } from '../user-info/UserInfo';
 import { UserRentals } from '../user-rents/UserRentals';
 
