@@ -1,32 +1,45 @@
 import { useEffect, useState } from "react";
 import { getVehicles } from "../../../core/services/vehiclesService";
 import VehicleCard from "../vehicle-card/VehicleCard";
-import styles from './vehicles.module.css'
-import { Spinner } from 'react-bootstrap'
+import styles from "./vehicles.module.css";
+import { Spinner } from "react-bootstrap";
 
-export default function VehiclesList() {
+export default function VehiclesList({ searchParams }) {
   const [vehicles, setVehicles] = useState([]);
-  
+  const [filteredVehicles, setFilteredVehicles] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     getVehicles().then((res) => {
       setVehicles(res.data);
+      setFilteredVehicles(res.data);
       setLoading(false);
     });
   }, []);
+
+  useEffect(() => {
+    if (searchParams.trim() !== "") {
+      setFilteredVehicles(
+        vehicles.filter((x) => {
+          return `${x.brand} ${x.model}`.toLowerCase().includes(searchParams.toLowerCase());
+        })
+      );
+    } else {
+      setFilteredVehicles(vehicles);
+    }
+  }, [searchParams]);
 
   return (
     <div className={styles["vehicles-wrapper"]}>
       {isLoading ? (
         <Spinner animation="border" role="status">
-        <span className="sr-only"></span>
-      </Spinner>
-      ): (
-        (vehicles.map((vehicle) => (
-        <VehicleCard key={vehicle.id} vehicle={vehicle} />
-      )))
+          <span className="sr-only"></span>
+        </Spinner>
+      ) : (
+        filteredVehicles.map((vehicle) => (
+          <VehicleCard key={vehicle.id} vehicle={vehicle} />
+        ))
       )}
     </div>
   );

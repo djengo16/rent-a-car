@@ -15,7 +15,7 @@ export default function VehicleCard(props) {
       <Card.Img className={styles["card-img"]} variant="top" src={image} />
       </Link>
       <Card.Body>
-        <Card.Title classname={styles["card-title"]}>
+        <Card.Title className={styles["card-title"]}>
           {brand} {model}
         </Card.Title>
         <Card.Text className={styles["card-text"]}>

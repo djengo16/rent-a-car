@@ -13,6 +13,7 @@ import { Spinner, Image } from "react-bootstrap";
 const defaultImg = "https://blog.nscsports.org/wp-content/uploads/2014/10/default-img.gif"
 
 export function CreateVehicle() {
+  const [vehicleId, setVehicleId] = useState(null);
   const [brandsWithModels, setBrandsWithModels] = useState(null);
   const [brands, setBrands] = useState(null);
   const [selectedBrand, setSelectedBrand] = useState(null);
@@ -81,10 +82,12 @@ export function CreateVehicle() {
     const { image, ...otherData } = vehicleData;
     const res = await uploadImage(image);
     
-    await createVehicleAd({
+    const vehicleAd = await createVehicleAd({
       ...otherData,
       image: `https://res.cloudinary.com/diz18npdj/image/upload/${res.data.public_id}.png`,
     })
+
+    setVehicleId(vehicleAd.id);
     
     setLoading(false);
     setRedirect(true);
@@ -98,7 +101,7 @@ export function CreateVehicle() {
   return (
     <>
       <Sider />
-      {redirect && <Redirect to="/" />}
+      {redirect && <Redirect to={`/ad/details/${vehicleId}`} />}
       <div className="container">
         <Form className="form-inline" onSubmit={onFormSubmit}>
           <h1 className={styles.heading}>Create new ad</h1>
@@ -125,8 +128,8 @@ export function CreateVehicle() {
           <Col lg="6">
           <Form.Group className={styles["form-group"]} as={Col} lg="12"controlId="brand"name="brand">
               <Form.Label className={styles["form-label"]}>Brand</Form.Label>
-              <Form.Control required as="select" placeholder="Choose..."  onChange={onInputChange}>
-                <option key={count} disabled>Select brand...</option>
+              <Form.Control required as="select" minlength="1" placeholder="Choose..."  onChange={onInputChange}>
+                <option key={count} ></option>
                 {brands && brands.map((brand) => <option key={count++}>{brand}</option>)}
               </Form.Control>
             </Form.Group>
@@ -139,8 +142,8 @@ export function CreateVehicle() {
             </Form.Group>
             <Form.Group className={styles["form-group"]}as={Col} md="12" controlId="type" name="type">
               <Form.Label className={styles["form-label"]}>Vehicle type</Form.Label>
-              <Form.Control required as="select"placeholder="Choose..."onChange={onInputChange}>
-                <option key={2000 + count} disabled>Select type..</option>
+              <Form.Control required minlength="1" as="select"placeholder="Choose..."onChange={onInputChange}>
+                <option key={2000 + count}></option>
                 {vehicleTypes.map((type) => <option key={2000 + count++}>{type}</option>)}
               </Form.Control>
             </Form.Group> 

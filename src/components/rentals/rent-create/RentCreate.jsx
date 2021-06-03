@@ -151,8 +151,8 @@ export function RentCreate({ customer, vehicle }) {
         <div>
           <h2>{totalPrice !== 0 && `Total price: ${totalPrice.toFixed(2)}`}</h2>
           {discount !== 0 && (
-            <label id={styles["discount-label"]}>
-              <label id={styles["original-price"]}>{price.toFixed(2)}$</label>
+            <label id={styles["discountLabel"]}>
+              <label id={styles["originalPrice"]}>{price.toFixed(2)}$</label>
               <small> {discount}% discount</small>
             </label>
           )}

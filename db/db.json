@@ -105,7 +105,7 @@
     {
       "brand": "Peugeot",
       "model": "C-Zero",
-      "type": "SUV",
+      "type": "economy",
       "constructionYear": "2003",
       "seats": "3",
       "fuelType": "petrol",
@@ -125,6 +125,18 @@
       "availableCount": 10,
       "image": "https://res.cloudinary.com/diz18npdj/image/upload/gw10q0qjafuozzhik1df.png",
       "id": "aKLH3jR"
+    },
+    {
+      "type": "luxyry",
+      "brand": "BMW",
+      "model": "M3",
+      "fuelType": "petrol",
+      "constructionYear": "2010",
+      "availableCount": "10",
+      "seats": "4",
+      "price": "150",
+      "image": "https://res.cloudinary.com/diz18npdj/image/upload/jgbicr5kjtnkohnwntto.png",
+      "id": "HwuP8te"
     }
   ],
   "rentalEvents": [

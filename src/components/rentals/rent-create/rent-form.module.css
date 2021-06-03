@@ -2,14 +2,14 @@ form {
   text-align: left;
 }
 
-#discount-label{
+#discountLabel{
   color:rgb(219, 0, 44)
 }
-#original-price{
+#originalPrice{
   text-decoration: line-through;
 }
 
-.datetime-picker {
+.datetimePicker {
   margin-bottom: 20px;
   display: inline;
 }
