@@ -27,7 +27,7 @@ export function VehicleDetails({ computedMatch }) {
   return (
     <>
       <Sider />
-      <div className="container">
+      <div className="container" id={styles['detailsWrapper']}>
         <Breadcrumb className={styles.breadcrumb}>
           <Link to="/" className={styles.link}>
             Home

@@ -43,7 +43,7 @@ export function UserRentals({ computedMatch }) {
         {userRents.length === 0 && (
           <h3 className={styles["heading"]}>User don't have any rents</h3>
         )}
-        <RentsList rentals={userRentsFiltered}></RentsList>
+        <RentsList rentalsFiltered={userRentsFiltered} setRentals={setUserRents} />
       </div>
     </div>
   );

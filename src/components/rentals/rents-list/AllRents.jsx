@@ -38,7 +38,7 @@ export function AllRents({computedMatch}) {
   return (
     <div className="container">
         <RentsNav rentals={rentsQuery} />
-        <RentsList rentals={rentalsFiltered} />
+        <RentsList rentalsFiltered={rentalsFiltered} setRentals={setRentals}/>
     </div>
   );
 }

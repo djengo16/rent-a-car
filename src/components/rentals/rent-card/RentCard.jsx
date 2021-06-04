@@ -9,7 +9,7 @@ import {
 import { increaseVehiclesCount } from "../../../core/services/vehiclesService";
 import styles from "./rent-card.module.css";
 
-export function RentCard({ info }) {
+export function RentCard({ info, setRentals }) {
   const [status, setStatus] = useState(info.status);
   const [isLoading, setLoading] = useState(false);
 
@@ -23,18 +23,21 @@ export function RentCard({ info }) {
     setStatus(info.status);
   }, [info]);
 
-  const handleStatusChange = (e) => {
+  const handleStatusChange = async (e) => {
     setLoading(true);
     const newStatus = e.target.innerText;
     if (newStatus !== status) {
-      changeRentalEventStatus(info.id, newStatus);
-      setStatus(newStatus)
+      const rental = (await changeRentalEventStatus(info.id, newStatus)).data;
+      setStatus(newStatus);
+      setRentals((prevState) => [
+        ...prevState.filter((x) => x.id !== rental.id),
+        rental,
+      ]);
 
       if (newStatus === RentalStatus.Old) {
         increaseVehiclesCount(info.vehicle.id);
       }
     }
-    setLoading(false);
   };
 
   const context = useContext(UserContext);

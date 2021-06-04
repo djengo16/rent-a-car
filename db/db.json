@@ -88,7 +88,7 @@
       "price": "45",
       "id": "s1N8rPb",
       "image": "https://res.cloudinary.com/diz18npdj/image/upload/v1622539882/jfvxa6a5lzoetag0cw7k.jpg",
-      "availableCount": 9
+      "availableCount": 10
     },
     {
       "brand": "Honda",
@@ -100,7 +100,7 @@
       "price": 40,
       "id": "x6sr423xs0",
       "image": "https://images.honestjohn.co.uk/imagecache/file/crop/1200x800/media/8034207/Honda~Civic~Tourer~(11).jpg",
-      "availableCount": 17
+      "availableCount": 20
     },
     {
       "brand": "Peugeot",
@@ -179,7 +179,7 @@
       },
       "customerId": "F6NJL1Y",
       "totalPrice": 85,
-      "status": "In Proccess",
+      "status": "Old",
       "id": 2
     },
     {

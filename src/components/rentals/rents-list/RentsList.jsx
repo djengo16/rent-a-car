@@ -1,11 +1,11 @@
 import { RentCard } from "../rent-card/RentCard";
-export function RentsList({rentals}) {
+export function RentsList({rentalsFiltered, setRentals}) {
 
   return (
     <div className="container" >
-      {rentals.length !== 0 &&
-        rentals.map((x) => {
-          return <RentCard key={x.id} info={x}></RentCard>;
+      {rentalsFiltered.length !== 0 &&
+        rentalsFiltered.map((x) => {
+          return <RentCard key={x.id} info={x} setRentals={setRentals} />
         })}
     </div>
   );
