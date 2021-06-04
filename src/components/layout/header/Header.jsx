@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styles from "./header.module.css";
 import { Navbar, Nav, Image, NavDropdown } from "react-bootstrap";
 import {useContext} from 'react'
@@ -17,11 +17,6 @@ export const Header = () => {
       context.user.loggedIn ? (
       <header>
         <Navbar className={styles["navigation"]} bg="light" expand="lg">
-          <Navbar.Brand>
-            <Link to="/home">
-            <Image src="https://i.ibb.co/LgnR14V/car.png" />
-            </Link>
-          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
@@ -38,19 +33,19 @@ export const Header = () => {
                 {context.user.isAdmin === true && 
               <NavDropdown title="Admin" drop="left" id="collasible-nav-dropdown">
                  <NavDropdown.Item>
-                     <Link className="nav-link" to="/users">
+                     <NavLink className="nav-link" to="/users">
                        View customers
-                     </Link>
+                     </NavLink>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
-                     <Link className="nav-link" to="/ad/create">
+                     <NavLink className="nav-link" to="/ad/create">
                        Create ad
-                     </Link>
+                     </NavLink>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
-                     <Link className="nav-link" to="/rentals">
+                     <NavLink className="nav-link" to="/rentals">
                        Rentals
-                     </Link>
+                     </NavLink>
                   </NavDropdown.Item>
               </NavDropdown> }
                 <Link className="nav-link" to="/" onClick={onLogout}>

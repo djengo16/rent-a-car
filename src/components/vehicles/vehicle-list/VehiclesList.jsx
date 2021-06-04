@@ -28,7 +28,7 @@ export default function VehiclesList({ searchParams }) {
     } else {
       setFilteredVehicles(vehicles);
     }
-  }, [searchParams]);
+  }, [searchParams, vehicles]);
 
   return (
     <div className={styles["vehicles-wrapper"]}>

@@ -1,8 +1,7 @@
 import { getAllUsers } from "./usersService";
-import axios from 'axios'
+import axios from "axios";
 
-
-const url = 'http://localhost:3000/';
+const url = "http://localhost:3000/";
 
 /**
  *
@@ -36,16 +35,17 @@ export async function register(userData) {
     throw new Error("Email already exists");
   }
 
-  userData = {
-    ...userData,
-    isAdmin: false
-  };
+  if (userData.password !== userData.confirmPassword) {
+    throw new Error("Passwords does not match!");
+  }
 
-  return axios.post(url + 'users', userData);
+  const { confirmPassword, ...data } = userData;
+
+  return axios.post(url + "users", data);
 }
 
-export function logout(){
-  localStorage.removeItem('loggedUser');
+export function logout() {
+  localStorage.removeItem("loggedUser");
 }
 
 /**

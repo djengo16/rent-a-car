@@ -12,7 +12,7 @@ export function Home() {
 
   return (
     <div className={styles["main-content"]}>
-      <div id="sider">
+      <div id="searchSider">
         <input
           className="col-lg-6"
           type="text"

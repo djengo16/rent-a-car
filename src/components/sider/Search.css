@@ -1,4 +1,4 @@
-#sider {
+#searchSider {
     background-image: url('../../static/road.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -9,7 +9,7 @@
     padding: 113px;
 }
 
-#sider > input {
+#searchSider > input {
     overflow: visible;
     border-radius: 50px;
     border: 1px;
@@ -23,6 +23,6 @@
     background-position-x: 17px;
 }
 
-#sider > input:focus {
+#searchSider > input:focus {
     outline: none;
 }

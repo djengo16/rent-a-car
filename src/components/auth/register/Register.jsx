@@ -3,7 +3,7 @@ import styles from "./register.module.css";
 import { Link, Redirect } from "react-router-dom";
 import { register } from "../../../core/services/authService";
 import Sider from "../../sider/Sider";
-import { Spinner, Form} from 'react-bootstrap'
+import { Spinner, Form, Alert} from 'react-bootstrap'
 
 export class Register extends Component {
   constructor(props) {
@@ -14,12 +14,12 @@ export class Register extends Component {
       email: "",
       isAdmin: false,
       phone: "",
+      isVip: false,
       password: "",
       confirmPassword: "",
       redirect: false,
       error: "",
       isLoading: false,
-      rentals: [],
       avatar: "https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png",
     };
   }
@@ -36,10 +36,7 @@ export class Register extends Component {
     e.preventDefault();
 
     this.setState({isLoading: true});
-    const { redirect, error, confirmPassword, isLoading, ...user } = this.state;
-    if (user.password !== confirmPassword) {
-      this.setState({ error: "Passwords do not match!" });
-    }
+    const { redirect, error, isLoading, ...user } = this.state;
 
     register(user)
       .then((_) => {
@@ -66,9 +63,9 @@ export class Register extends Component {
             className={styles["register-form"]}
             onSubmit={this.onFormSubmit}
           >
-            <h2>Register</h2>
+            <h2 style={{textAlign: "center"}}>Register</h2>
             {this.state.error && (
-              <span className="text-danger">{this.state.error}</span>
+              <Alert variant="danger">{this.state.error}</Alert>
             )}
             <div className="form-grup">
               <label htmlFor="fullName">Name</label>
@@ -130,7 +127,7 @@ export class Register extends Component {
               <span className="sr-only" />
             </Spinner>
             ) : (
-              <button className="btn btn-dark">Sign Up</button>
+              <button className="btn btn-dark" >Sign Up</button>
             )}
             <div>
               <small>

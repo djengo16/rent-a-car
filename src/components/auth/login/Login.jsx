@@ -3,7 +3,7 @@ import styles from "./login.module.css";
 import { Redirect, Link } from "react-router-dom";
 import { login } from "../../../core/services/authService";
 import Sider from "../../sider/Sider";
-import {Spinner} from 'react-bootstrap';
+import {Spinner, Alert} from 'react-bootstrap';
 import UserContext from "../../../Context";
 
 export function Login() {
@@ -43,8 +43,8 @@ export function Login() {
       {redirect && <Redirect to="/" />}
       <div className={styles["login-form-wrapper"]}>
         <form className={styles["login-form"]} onSubmit={onFormSubmit}>
-          <h2>Login</h2>
-          {error && <span className="text-danger">{error}</span>}
+          <h2 className={styles["login-heading"]}>Login</h2>
+          {error && <Alert variant="danger" >{error}</Alert>}
           <div className="form-group">
             <label htmlFor="email">Email: </label>
             <input

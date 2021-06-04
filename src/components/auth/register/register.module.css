@@ -1,50 +1,46 @@
 .register-form-wrapper {
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  
-  .register-form {
-    padding: 2%;
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 500px;
-  }
+.register-form {
+  padding: 2%;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 500px;
+}
 
-  .register-form input{
-    background: transparent;
-    margin: 10px 0;
-    border: 1px solid blue;
-  }
-  form {
-    margin: 0 auto;
+.register-form input {
+  background: transparent;
+  margin: 10px 0;
+  border: 1px solid blue;
 }
 
 .auth-heading {
-    text-align: center;
-    font-family: serif;
-    padding-bottom: 20px;
+  text-align: center;
+  font-family: serif;
+  padding-bottom: 20px;
 }
 
 .btnAuth {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
 .bottom-msg-paragraph {
-    text-align: center;
-    padding-top: 20px;
+  text-align: center;
+  padding-top: 20px;
 }
 
 .bottom-msg-paragraph a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .form-text {
-    margin-left: 4px;
+  margin-left: 4px;
 }
-.login-redirect{
+.login-redirect {
   text-decoration: none;
   color: silver;
 }

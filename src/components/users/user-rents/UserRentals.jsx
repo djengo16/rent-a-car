@@ -21,12 +21,11 @@ export function UserRentals({ computedMatch }) {
   useEffect(() => {
     getCustomerRentals(userId).then((res) => {
       setUserRents(res.data);
-      setUserRentsFiltered(res.data);
     });
   }, [userId]);
 
   useEffect(() => {
-    if (computedMatch.params.filter === "all") {
+    if (computedMatch.params.filter === "all" || !computedMatch.params.filter) {
       setUserRentsFiltered(userRents);
     } else {
       setUserRentsFiltered(

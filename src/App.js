@@ -46,6 +46,7 @@ function App() {
       logOut,
     }}>
       <Header />
+      <div style={{paddingBottom: "2.5rem"}}>
       <Switch>
         <AuthenticatedRoute exact path="/" component={Home} />
         <AuthenticatedRoute exact path="/home" component={Home} />
@@ -61,6 +62,7 @@ function App() {
         <AuthenticatedRoute exact path="/rentals"  component={AllRents}  admin={true} />
         <Route component={Error404} />
       </Switch>
+      </div>
       <Footer />
       </UserContext.Provider>
     </div>

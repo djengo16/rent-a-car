@@ -16,7 +16,7 @@ export function UsersList() {
   }, []);
 
   useEffect(() => {
-    console.log(searchParams);
+
     if (searchParams.trim() !== "") {
       setFilteredUsers(
         users.filter((x) => {
@@ -28,7 +28,7 @@ export function UsersList() {
     } else {
       setFilteredUsers(users);
     }
-  }, [searchParams]);
+  }, [searchParams, users]);
 
   const handleSearchParams = (e) => {
     setSearchParams(e.target.value);
@@ -36,7 +36,7 @@ export function UsersList() {
 
   return (
     <>
-      <div id="sider">
+      <div id="searchSider">
         <input
           className="col-lg-6"
           type="text"

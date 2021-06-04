@@ -17,13 +17,12 @@ export function AllRents({computedMatch}) {
   useEffect(() => {
       
     getAllRentals().then((res) => {
-      setRentals(res.data);
-      setRentalsFiltered(res.data);
+      setRentals(res.data);      
     });
   }, []);
 
   useEffect(() => {
-    if (computedMatch.params.filter === "all") {
+    if (computedMatch.params.filter === "all" || !computedMatch.params.filter) {
       setRentalsFiltered(rentals);
     } else {
       setRentalsFiltered(
@@ -31,7 +30,7 @@ export function AllRents({computedMatch}) {
           (x) => x.status === QueryRentalStatus[computedMatch.params.filter]
         )
       );
-          console.log(computedMatch.params.filter)
+         
 
     }
   }, [computedMatch, rentals]);
