@@ -12,8 +12,19 @@ export function getUserById(id) {
   return axios.get(`${url}users/${id}`);
 }
 
-export function updateUser(user) {
-  localStorage.setItem("loggedUser",JSON.stringify(user));
+export async function updateUser(user) {
+  const users = (await getAllUsers()).data;
+
+  if (users.find((u) => u.email === user.email && u.id !== user.id)) {
+    throw new Error("Email already exists.");
+  }
+  Object.values(user).forEach(x => {
+    if(x === "" || x === undefined || x === null){
+      throw new Error("All fields are required!");
+    }
+  })
+
+  localStorage.setItem("loggedUser", JSON.stringify(user));
   return axios.put(`${url}users/${user.id}`, user);
 }
 

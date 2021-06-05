@@ -1,6 +1,14 @@
 import { MdPhoneAndroid, MdEmail } from "react-icons/md";
 import { RiVipCrownFill } from "react-icons/ri";
-import { Row, Col, Image, Modal, Button, Spinner } from "react-bootstrap";
+import {
+  Row,
+  Col,
+  Image,
+  Modal,
+  Button,
+  Spinner,
+  Alert,
+} from "react-bootstrap";
 import { BsFillPersonFill } from "react-icons/bs";
 import { useContext, useEffect } from "react";
 import { useState } from "react";
@@ -23,6 +31,7 @@ export function UserInfo({ userId }) {
   const [isLoading, setLoading] = useState(false);
   const [currentEditAvatar, setCurrentEditAvatar] = useState();
   const [redirect, setRedirect] = useState(false);
+  const [error, setError] = useState(false);
   const context = useContext(UserContext);
   const loggedUser = getLoggedUser();
 
@@ -66,17 +75,27 @@ export function UserInfo({ userId }) {
       updateUser({
         ...otherData,
         avatar: `https://res.cloudinary.com/diz18npdj/image/upload/${res.data.public_id}.png`,
-      }).then((res) => {
-        setUser(res.data);
-        setLoading(false);
-        handleClose();
-      });
+      })
+        .then((res) => {
+          setUser(res.data);
+          setLoading(false);
+          handleClose();
+        })
+        .catch((err) => {
+          setError(err.message);
+          setLoading(false);
+        });
     } else {
-      updateUser(editedUser).then((res) => {
-        setUser(res.data);
-        setLoading(false);
-        handleClose();
-      });
+      updateUser(editedUser)
+        .then((res) => {
+          setUser(res.data);
+          setLoading(false);
+          handleClose();
+        })
+        .catch((err) => {
+          setError(err.message);
+          setLoading(false);
+        });
     }
   };
 
@@ -91,7 +110,10 @@ export function UserInfo({ userId }) {
   //For EDIT MODAL
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+    setError(false);
+  }
   const handleShow = () => setShow(true);
 
   //For DELETE MODAL
@@ -138,6 +160,7 @@ export function UserInfo({ userId }) {
             <Modal.Title>Edit your profile</Modal.Title>
           </Modal.Header>
           <Modal.Body>
+            {error && <Alert variant="danger">{error}</Alert>}
             <form>
               <Image
                 roundedCircle
