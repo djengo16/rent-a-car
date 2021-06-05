@@ -87,7 +87,7 @@ export function CreateVehicle() {
         image: `https://res.cloudinary.com/diz18npdj/image/upload/${res.data.public_id}.png`,
       });
 
-      setVehicleId(vehicleAd.id);
+      setVehicleId(vehicleAd.data.id);
 
       setLoading(false);
       setRedirect(true);
@@ -286,7 +286,7 @@ export function CreateVehicle() {
               <span className="sr-only" />
             </Spinner>
           ) : (
-            <Button className="btn btn-dark col-lg-2" type="submit">
+            <Button className="btn btn-dark col-lg-2" id={styles["submit-btn"]} type="submit">
               Create
             </Button>
           )}

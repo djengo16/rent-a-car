@@ -137,6 +137,30 @@
       "price": 150,
       "image": "https://res.cloudinary.com/diz18npdj/image/upload/jgbicr5kjtnkohnwntto.png",
       "id": "HwuP8te"
+    },
+    {
+      "brand": "Porsche",
+      "model": "Boxster",
+      "type": "luxyry",
+      "fuelType": "petrol",
+      "constructionYear": "2017",
+      "seats": "2",
+      "availableCount": "10",
+      "price": "300",
+      "image": "https://res.cloudinary.com/diz18npdj/image/upload/ak1dxgva0dspt47nqgqu.png",
+      "id": "44HZOIS"
+    },
+    {
+      "brand": "Volvo",
+      "model": "XC60",
+      "type": "SUV",
+      "fuelType": "petrol",
+      "constructionYear": "2020",
+      "seats": "4",
+      "price": "300",
+      "availableCount": "22",
+      "image": "https://res.cloudinary.com/diz18npdj/image/upload/ydbehkw3akscwlouncsy.png",
+      "id": "eImJz0h"
     }
   ],
   "rentalEvents": [

@@ -48,7 +48,7 @@ export default function VehiclesList({ searchParams, sort }) {
               return b.constructionYear - a.constructionYear;
             }
             if (sort === "lowerPrice") {
-              return a.price - b.price;
+              return b.price - a.price;
             }
             if (sort === "biggerPrice") {
               return a.price - b.price;

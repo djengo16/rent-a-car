@@ -30,3 +30,8 @@ border-radius: 5px;
     padding: 5px;
     border-radius: 6px;
 }
+
+#submit-btn{
+margin-bottom: 10px;
+margin-left: 10px;
+}
