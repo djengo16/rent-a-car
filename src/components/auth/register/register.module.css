@@ -12,6 +12,10 @@
   width: 500px;
 }
 
+.register-form h2{
+  text-align: center;
+}
+
 .register-form input {
   background: transparent;
   margin: 10px 0;

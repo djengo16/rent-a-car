@@ -4,7 +4,7 @@ import VehicleCard from "../vehicle-card/VehicleCard";
 import styles from "./vehicles.module.css";
 import { Spinner } from "react-bootstrap";
 
-export default function VehiclesList({ searchParams }) {
+export default function VehiclesList({ searchParams, sort }) {
   const [vehicles, setVehicles] = useState([]);
   const [filteredVehicles, setFilteredVehicles] = useState([]);
   const [isLoading, setLoading] = useState(false);
@@ -22,7 +22,9 @@ export default function VehiclesList({ searchParams }) {
     if (searchParams.trim() !== "") {
       setFilteredVehicles(
         vehicles.filter((x) => {
-          return `${x.brand} ${x.model}`.toLowerCase().includes(searchParams.toLowerCase());
+          return `${x.brand} ${x.model}`
+            .toLowerCase()
+            .includes(searchParams.toLowerCase());
         })
       );
     } else {
@@ -37,9 +39,22 @@ export default function VehiclesList({ searchParams }) {
           <span className="sr-only"></span>
         </Spinner>
       ) : (
-        filteredVehicles.map((vehicle) => (
-          <VehicleCard key={vehicle.id} vehicle={vehicle} />
-        ))
+        filteredVehicles
+          .sort((a, b) => {
+            if (sort === "lowerYear") {
+              return  a.constructionYear - b.constructionYear;
+            }
+            if (sort === "biggerYear") {
+              return b.constructionYear - a.constructionYear;
+            }
+            if (sort === "lowerPrice") {
+              return a.price - b.price;
+            }
+            if (sort === "biggerPrice") {
+              return a.price - b.price;
+            }
+          })
+          .map((vehicle) => <VehicleCard key={vehicle.id} vehicle={vehicle} />)
       )}
     </div>
   );

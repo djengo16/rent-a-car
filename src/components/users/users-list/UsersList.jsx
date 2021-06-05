@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getAllUsers } from "../../../core/services/usersService";
 import { UserCard } from "../user-card/UserCard";
 import "../../sider/Search.css";
-
+import styles from './usersList.module.css'
 export function UsersList() {
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
@@ -45,7 +45,7 @@ export function UsersList() {
           onChange={handleSearchParams}
         />
       </div>
-      <div className="container" style={{ display: "flex", flexWrap: "wrap" }}>
+      <div className="container" id={styles["usersWrapper"]}>
         {filteredUsers.map((user) => (
           <UserCard key={user.id} user={user} />
         ))}

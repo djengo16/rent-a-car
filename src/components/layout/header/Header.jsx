@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import styles from "./header.module.css";
-import { Navbar, Nav, Image, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav, Image, NavDropdown, Badge } from "react-bootstrap";
 import {useContext} from 'react'
 import UserContext from "../../../Context";
 
@@ -15,7 +15,7 @@ export const Header = () => {
 
     return (
       context.user.loggedIn ? (
-      <header>
+      <header id={styles["header"]}>
         <Navbar className={styles["navigation"]} bg="light" expand="lg">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -30,6 +30,7 @@ export const Header = () => {
                 Profile
               </Link>
             </Nav>
+            <Badge variant="danger">8</Badge>
                 {context.user.isAdmin === true && 
               <NavDropdown title="Admin" drop="left" id="collasible-nav-dropdown">
                  <NavDropdown.Item>

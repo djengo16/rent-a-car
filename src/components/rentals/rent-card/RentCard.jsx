@@ -45,7 +45,7 @@ export function RentCard({ info, setRentals }) {
   return (
     <Card className={styles["card"]}>
       <Card.Header>
-        <Button style={{ float: "left" }} disabled variant={badges[status]}>
+        <Button className={styles["statusBadge"]} disabled variant={badges[status]}>
           {status}
         </Button>
         {info.address}

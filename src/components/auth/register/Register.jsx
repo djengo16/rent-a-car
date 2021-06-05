@@ -63,7 +63,7 @@ export class Register extends Component {
             className={styles["register-form"]}
             onSubmit={this.onFormSubmit}
           >
-            <h2 style={{textAlign: "center"}}>Register</h2>
+            <h2>Register</h2>
             {this.state.error && (
               <Alert variant="danger">{this.state.error}</Alert>
             )}
