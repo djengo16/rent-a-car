@@ -10,7 +10,7 @@ export function Offers(){
                 <li className={styles['offersListItem']}>You can also get discount if the rental period is:</li>
                 <li>More than 3 days - 5% discount.</li>
                 <li>More than 5 days - 7% discount.</li>
-                <li>More than 1 days - 10% discount.</li>
+                <li>More than 10 days - 10% discount.</li>
             </ul>
         </div>
     )
