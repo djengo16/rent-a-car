@@ -37,6 +37,7 @@ export function RentCard({ info, setRentals }) {
       if (newStatus === RentalStatus.Old) {
         increaseVehiclesCount(info.vehicle.id);
       }
+      setLoading(false);
     }
   };
 

@@ -17,6 +17,7 @@ import { getLoggedUser, logout } from "./core/services/authService";
 import { UsersList } from "./components/users/users-list/UsersList";
 import { UserProfile } from "./components/users/user-profile/UserProfile";
 import { AllRents } from "./components/rentals/rents-list/AllRents";
+import { Offers } from "./components/offers/Offers";
 
 function App() {
 
@@ -60,6 +61,7 @@ function App() {
         <AuthenticatedRoute exact path="/user/:id/rentals/:filter"  component={UserProfile}  />
         <AuthenticatedRoute exact path="/rentals/:filter"  component={AllRents} admin={true} />
         <AuthenticatedRoute exact path="/rentals"  component={AllRents}  admin={true} />
+        <AuthenticatedRoute exact path="/offers"  component={Offers} />
         <Route component={Error404} />
       </Switch>
       </div>

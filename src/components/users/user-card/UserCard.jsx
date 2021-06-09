@@ -19,7 +19,7 @@ export function UserCard({user}) {
               <RiVipCrownFill /> VIP
             </p>)}
               <h5 className="card-title">{user.fullName}</h5>
-              <Link to={`/user/${user.id}`} params={user}  class="btn btn-dark">
+              <Link to={`/user/${user.id}`} params={user}  className="btn btn-dark">
                 View Profile
               </Link>
             </div>

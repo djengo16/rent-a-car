@@ -39,6 +39,16 @@
       "id": "IFVcf_b",
       "isVip": false,
       "avatar": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200"
+    },
+    {
+      "fullName": "Vanko",
+      "email": "vankoo1@mail.mail",
+      "isAdmin": false,
+      "phone": "123132523123",
+      "isVip": false,
+      "password": "12345",
+      "id": "Oc2hGWU",
+      "avatar": "https://res.cloudinary.com/diz18npdj/image/upload/ugraiowaanicjnz4wgp5.png"
     }
   ],
   "vehicles": [
@@ -100,7 +110,7 @@
       "price": 40,
       "id": "x6sr423xs0",
       "image": "https://images.honestjohn.co.uk/imagecache/file/crop/1200x800/media/8034207/Honda~Civic~Tourer~(11).jpg",
-      "availableCount": 20
+      "availableCount": 19
     },
     {
       "brand": "Peugeot",
@@ -158,9 +168,9 @@
       "constructionYear": "2020",
       "seats": "4",
       "price": "300",
-      "availableCount": "22",
       "image": "https://res.cloudinary.com/diz18npdj/image/upload/ydbehkw3akscwlouncsy.png",
-      "id": "eImJz0h"
+      "id": "eImJz0h",
+      "availableCount": 22
     }
   ],
   "rentalEvents": [
@@ -224,7 +234,7 @@
       },
       "customerId": "tBOzV-H",
       "totalPrice": 376.65,
-      "status": "In Proccess",
+      "status": "Waiting",
       "id": 3
     },
     {
@@ -289,6 +299,48 @@
       "totalPrice": 170,
       "status": "In Proccess",
       "id": 6
+    },
+    {
+      "startDate": "6/6/2021, 11:39:00 PM",
+      "endDate": "6/10/2021, 11:39:00 PM",
+      "address": "tsar ivan asen I 2",
+      "vehicle": {
+        "brand": "Volvo",
+        "model": "XC60",
+        "type": "SUV",
+        "fuelType": "petrol",
+        "constructionYear": "2020",
+        "seats": "4",
+        "price": "300",
+        "availableCount": "22",
+        "image": "https://res.cloudinary.com/diz18npdj/image/upload/ydbehkw3akscwlouncsy.png",
+        "id": "eImJz0h"
+      },
+      "customerId": "Oc2hGWU",
+      "totalPrice": 1140,
+      "status": "In Proccess",
+      "id": 7
+    },
+    {
+      "startDate": "6/6/2021, 11:44:00 PM",
+      "endDate": "6/16/2021, 11:44:00 PM",
+      "address": "tsar ivan asen I 2",
+      "vehicle": {
+        "brand": "Honda",
+        "model": "Civic Tourer",
+        "type": "economy",
+        "constructionYear": 2015,
+        "seats": "4",
+        "fuelType": "petrol",
+        "price": 40,
+        "id": "x6sr423xs0",
+        "image": "https://images.honestjohn.co.uk/imagecache/file/crop/1200x800/media/8034207/Honda~Civic~Tourer~(11).jpg",
+        "availableCount": 20
+      },
+      "customerId": "Oc2hGWU",
+      "totalPrice": 372,
+      "status": "Waiting",
+      "id": 8
     }
   ],
   "vehicleBrands": [
